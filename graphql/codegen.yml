@@ -1,0 +1,34 @@
+overwrite: true
+schema: graphql/schema.json
+documents: graphql/*.graphql
+
+generates:
+  src/graphql/types.ts:
+    plugins:
+      - typescript
+    config:
+      defaultScalarType: unknown
+      enumsAsConst: true
+      skipTypename: true
+
+  src/graphql/operations.ts:
+    plugins:
+      - typescript-operations
+    config:
+      defaultScalarType: unknown
+      enumsAsConst: true
+      skipTypename: true
+    preset: import-types
+    presetConfig:
+      typesPath: ./types
+
+  src/graphql/sdk.ts:
+    plugins:
+      - typescript-graphql-request
+    preset: import-types
+    presetConfig:
+      typesPath: ./operations
+
+hooks:
+  afterAllFileWrite:
+    - prettier --write src/graphql

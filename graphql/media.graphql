@@ -1,0 +1,10 @@
+query getMedia($mediaId: Int) {
+  Media(id: $mediaId) {
+    title {
+      userPreferred
+      native
+      english
+    }
+    siteUrl
+  }
+}
