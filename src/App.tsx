@@ -14,16 +14,14 @@ import { SeasonDropdown } from './components/SeasonDropdown'
 import { SeasonYearDropdown } from './components/SeasonYearDropdown'
 import { StatusDropdown } from './components/StatusDropdown'
 import { TagDropdown } from './components/TagDropdown'
+import { drawMedia, useAniListClient } from './lib/anilist'
 import { filtersQuerySelector } from './lib/atom'
-import { config } from './lib/config'
-import { drawMedia } from './lib/drawMedia'
-import { useAniListClient } from './lib/useAniListClient'
-import { useAniListToken } from './lib/useAniListToken'
+import { useAniListAuthorizeUrl, useAniListToken } from './lib/oauth2'
 
-import type { BearerToken } from './lib/useAniListToken'
+import type { BearerToken } from './lib/oauth2'
 
 export function App(): JSX.Element {
-  const { token, authorizeUrl } = useAniListToken(config.aniListClientId)
+  const token = useAniListToken()
 
   return (
     <Container
@@ -31,12 +29,14 @@ export function App(): JSX.Element {
         paddingTop: '$32',
       }}
     >
-      {token === null ? <OnUnauthorized authorizeUrl={authorizeUrl} /> : <OnAuthorized token={token} />}
+      {token === null ? <OnUnauthorized /> : <OnAuthorized token={token} />}
     </Container>
   )
 }
 
-function OnUnauthorized({ authorizeUrl }: { authorizeUrl: string }): JSX.Element {
+function OnUnauthorized(): JSX.Element {
+  const authorizeUrl = useAniListAuthorizeUrl()
+
   return (
     <Card>
       <Card.Body>

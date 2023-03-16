@@ -27,8 +27,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "recoil": "0.7.7",
-    "ts-array-length": "0.1.2",
-    "zod": "3.21.4"
+    "ts-array-length": "0.1.2"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "3.2.2",

@@ -1,9 +1,25 @@
+import { GraphQLClient } from 'graphql-request'
+import { useMemo } from 'react'
+
+import { getSdk } from '../graphql/sdk'
 import { MediaSort } from '../graphql/types'
 
+import type { BearerToken } from './oauth2'
 import type { GetMediaQuery, SearchMediaQueryVariables } from '../graphql/operations'
 import type { Sdk } from '../graphql/sdk'
 
 export type Media = NonNullable<NonNullable<GetMediaQuery>['Media']>
+
+export const useAniListClient = (token: BearerToken): Sdk =>
+  useMemo(() => {
+    const client = new GraphQLClient('https://graphql.anilist.co', {
+      headers: {
+        authorization: `${token.tokenType} ${token.accessToken}`,
+      },
+    })
+
+    return getSdk(client)
+  }, [token])
 
 export const randomChoose = <T>(array: T[]): T => {
   const result = array[Math.floor(Math.random() * array.length)]

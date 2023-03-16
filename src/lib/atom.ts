@@ -108,7 +108,6 @@ export const useSingleDropdownState = <T>(state: RecoilState<T>): [NonNullable<T
       }
 
       const array = Array.from(selection) as T[]
-      // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
       setValue(array[0] as T)
     },
     [setValue]
