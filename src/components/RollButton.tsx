@@ -1,10 +1,34 @@
-import { Button } from '@nextui-org/react'
-import { IconDice3 } from '@tabler/icons-react'
+import { Button, Loading } from '@nextui-org/react'
+import { IconDice1, IconDice2, IconDice3, IconDice4, IconDice5, IconDice6 } from '@tabler/icons-react'
+import React, { useState } from 'react'
 
-export function RollButton({ onPress }: { onPress(): void }): JSX.Element {
+import { randomChoose } from '../lib/random'
+
+const dices = [
+  <IconDice1 key="1" />,
+  <IconDice2 key="2" />,
+  <IconDice3 key="3" />,
+  <IconDice4 key="4" />,
+  <IconDice5 key="5" />,
+  <IconDice6 key="6" />,
+]
+
+export function RollButton({ onPress, isProgressing }: { onPress(): void; isProgressing: boolean }): JSX.Element {
+  const [icon, setIcon] = useState(<IconDice3 />)
+
   return (
-    <Button icon={<IconDice3 />} onPress={onPress}>
-      Roll
+    <Button
+      auto
+      ghost
+      color="secondary"
+      disabled={isProgressing}
+      icon={icon}
+      onPress={onPress}
+      onMouseEnter={() => {
+        setIcon(randomChoose(dices))
+      }}
+    >
+      {isProgressing ? <Loading color="white" size="sm" /> : 'Click to Roll'}
     </Button>
   )
 }

@@ -10,7 +10,7 @@ import { isNonEmpty } from 'ts-array-length'
 
 import { filtersSelector, useSingleDropdownState } from '../lib/atom'
 
-import type { MediaStatus } from '../graphql/types'
+import type { MediaStatus } from '../graphql/generated/graphql'
 
 type DropdownItem = {
   label: string
@@ -46,7 +46,7 @@ export function StatusDropdown(): JSX.Element {
   return (
     <Dropdown>
       <Dropdown.Button flat>
-        Status
+        Airing Status
         {isNonEmpty(keys) && `: ${items[keys[0]].label}`}
       </Dropdown.Button>
       <Dropdown.Menu

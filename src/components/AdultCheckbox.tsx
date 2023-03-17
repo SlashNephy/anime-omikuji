@@ -1,10 +1,14 @@
 import { Checkbox } from '@nextui-org/react'
-import { useSetRecoilState } from 'recoil'
+import { useRecoilState } from 'recoil'
 
 import { filtersSelector } from '../lib/atom'
 
 export function AdultCheckbox(): JSX.Element {
-  const setValue = useSetRecoilState(filtersSelector('isAdult'))
+  const [isAdult, setIsAdult] = useRecoilState(filtersSelector('isAdult'))
 
-  return <Checkbox onChange={setValue}>Include Adult</Checkbox>
+  return (
+    <Checkbox isSelected={isAdult} onChange={setIsAdult}>
+      Include Adult
+    </Checkbox>
+  )
 }

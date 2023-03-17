@@ -598,8 +598,9 @@ export function TagDropdown(): JSX.Element {
   return (
     <Dropdown>
       <Dropdown.Button flat>
-        Tag
-        {keys.length > 0 && `: ${keys.join(', ')}`}
+        Tags
+        {keys.length > 0 && `: ${keys[0]}`}
+        {keys.length > 1 && ', ...'}
       </Dropdown.Button>
       <Dropdown.Menu
         items={Object.entries(items)}

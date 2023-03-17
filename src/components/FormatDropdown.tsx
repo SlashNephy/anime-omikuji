@@ -15,7 +15,7 @@ import { isNonEmpty } from 'ts-array-length'
 
 import { filtersSelector, useSingleDropdownState } from '../lib/atom'
 
-import type { MediaFormat } from '../graphql/types'
+import type { MediaFormat } from '../graphql/generated/graphql'
 
 type DropdownItem = {
   label: string

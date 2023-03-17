@@ -56,8 +56,9 @@ export function GenreDropdown(): JSX.Element {
   return (
     <Dropdown>
       <Dropdown.Button flat>
-        Genre
-        {keys.length > 0 && `: ${keys.join(', ')}`}
+        Genres
+        {keys.length > 0 && `: ${keys[0]}`}
+        {keys.length > 1 && ', ...'}
       </Dropdown.Button>
       <Dropdown.Menu
         items={Object.entries(items)}

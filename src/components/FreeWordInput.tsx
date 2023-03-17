@@ -1,16 +1,17 @@
 import { Input } from '@nextui-org/react'
-import { useSetRecoilState } from 'recoil'
+import { useRecoilState } from 'recoil'
 
 import { filtersSelector } from '../lib/atom'
 
 export function FreeWordInput(): JSX.Element {
-  const setValue = useSetRecoilState(filtersSelector('search'))
+  const [value, setValue] = useRecoilState(filtersSelector('search'))
 
   return (
     <Input
       clearable
-      label="Free word"
+      label="Search"
       labelPlaceholder="Search..."
+      value={value}
       onChange={(e) => {
         setValue(e.currentTarget.value)
       }}
