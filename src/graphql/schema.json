@@ -1564,7 +1564,7 @@
                 },
                 {
                   "name": "status",
-                  "description": "Filter by the watching\/reading status",
+                  "description": "Filter by the watching/reading status",
                   "type": {
                     "kind": "ENUM",
                     "name": "MediaListStatus",
@@ -1648,7 +1648,7 @@
                 },
                 {
                   "name": "status_in",
-                  "description": "Filter by the watching\/reading status",
+                  "description": "Filter by the watching/reading status",
                   "type": {
                     "kind": "LIST",
                     "name": null,
@@ -1662,7 +1662,7 @@
                 },
                 {
                   "name": "status_not_in",
-                  "description": "Filter by the watching\/reading status",
+                  "description": "Filter by the watching/reading status",
                   "type": {
                     "kind": "LIST",
                     "name": null,
@@ -1676,7 +1676,7 @@
                 },
                 {
                   "name": "status_not",
-                  "description": "Filter by the watching\/reading status",
+                  "description": "Filter by the watching/reading status",
                   "type": {
                     "kind": "ENUM",
                     "name": "MediaListStatus",
@@ -1841,7 +1841,7 @@
                 },
                 {
                   "name": "status",
-                  "description": "Filter by the watching\/reading status",
+                  "description": "Filter by the watching/reading status",
                   "type": {
                     "kind": "ENUM",
                     "name": "MediaListStatus",
@@ -1911,7 +1911,7 @@
                 },
                 {
                   "name": "status_in",
-                  "description": "Filter by the watching\/reading status",
+                  "description": "Filter by the watching/reading status",
                   "type": {
                     "kind": "LIST",
                     "name": null,
@@ -1925,7 +1925,7 @@
                 },
                 {
                   "name": "status_not_in",
-                  "description": "Filter by the watching\/reading status",
+                  "description": "Filter by the watching/reading status",
                   "type": {
                     "kind": "LIST",
                     "name": null,
@@ -1939,7 +1939,7 @@
                 },
                 {
                   "name": "status_not",
-                  "description": "Filter by the watching\/reading status",
+                  "description": "Filter by the watching/reading status",
                   "type": {
                     "kind": "ENUM",
                     "name": "MediaListStatus",
@@ -2727,7 +2727,7 @@
               "args": [
                 {
                   "name": "userId",
-                  "description": "User id of the follower\/followed",
+                  "description": "User id of the follower/followed",
                   "type": {
                     "kind": "NON_NULL",
                     "name": null,
@@ -2768,7 +2768,7 @@
               "args": [
                 {
                   "name": "userId",
-                  "description": "User id of the follower\/followed",
+                  "description": "User id of the follower/followed",
                   "type": {
                     "kind": "NON_NULL",
                     "name": null,
@@ -4429,7 +4429,7 @@
                 },
                 {
                   "name": "status",
-                  "description": "Filter by the watching\/reading status",
+                  "description": "Filter by the watching/reading status",
                   "type": {
                     "kind": "ENUM",
                     "name": "MediaListStatus",
@@ -4513,7 +4513,7 @@
                 },
                 {
                   "name": "status_in",
-                  "description": "Filter by the watching\/reading status",
+                  "description": "Filter by the watching/reading status",
                   "type": {
                     "kind": "LIST",
                     "name": null,
@@ -4527,7 +4527,7 @@
                 },
                 {
                   "name": "status_not_in",
-                  "description": "Filter by the watching\/reading status",
+                  "description": "Filter by the watching/reading status",
                   "type": {
                     "kind": "LIST",
                     "name": null,
@@ -4541,7 +4541,7 @@
                 },
                 {
                   "name": "status_not",
-                  "description": "Filter by the watching\/reading status",
+                  "description": "Filter by the watching/reading status",
                   "type": {
                     "kind": "ENUM",
                     "name": "MediaListStatus",
@@ -5245,7 +5245,7 @@
               "args": [
                 {
                   "name": "userId",
-                  "description": "User id of the follower\/followed",
+                  "description": "User id of the follower/followed",
                   "type": {
                     "kind": "NON_NULL",
                     "name": null,
@@ -5290,7 +5290,7 @@
               "args": [
                 {
                   "name": "userId",
-                  "description": "User id of the follower\/followed",
+                  "description": "User id of the follower/followed",
                   "type": {
                     "kind": "NON_NULL",
                     "name": null,
@@ -7025,44 +7025,44 @@
         {
           "kind": "ENUM",
           "name": "MediaListStatus",
-          "description": "Media list watching\/reading status enum.",
+          "description": "Media list watching/reading status enum.",
           "fields": null,
           "inputFields": null,
           "interfaces": null,
           "enumValues": [
             {
               "name": "CURRENT",
-              "description": "Currently watching\/reading",
+              "description": "Currently watching/reading",
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
               "name": "PLANNING",
-              "description": "Planning to watch\/read",
+              "description": "Planning to watch/read",
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
               "name": "COMPLETED",
-              "description": "Finished watching\/reading",
+              "description": "Finished watching/reading",
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
               "name": "DROPPED",
-              "description": "Stopped watching\/reading before completing",
+              "description": "Stopped watching/reading before completing",
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
               "name": "PAUSED",
-              "description": "Paused watching\/reading",
+              "description": "Paused watching/reading",
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
               "name": "REPEATING",
-              "description": "Re-watching\/reading",
+              "description": "Re-watching/reading",
               "isDeprecated": false,
               "deprecationReason": null
             }
@@ -8736,7 +8736,7 @@
             },
             {
               "name": "isRecommendationBlocked",
-              "description": "If the media is blocked from being recommended to\/from",
+              "description": "If the media is blocked from being recommended to/from",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -8919,13 +8919,13 @@
             },
             {
               "name": "SPECIAL",
-              "description": "Special episodes that have been included in DVD\/Blu-ray releases, picture dramas, pilots, etc",
+              "description": "Special episodes that have been included in DVD/Blu-ray releases, picture dramas, pilots, etc",
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
               "name": "OVA",
-              "description": "(Original Video Animation) Anime that have been released directly on DVD\/Blu-ray without originally going through a theatrical release or television broadcast",
+              "description": "(Original Video Animation) Anime that have been released directly on DVD/Blu-ray without originally going through a theatrical release or television broadcast",
               "isDeprecated": false,
               "deprecationReason": null
             },
@@ -12113,7 +12113,7 @@
             },
             {
               "name": "inProgress",
-              "description": "The number of users with watching\/reading the media",
+              "description": "The number of users with watching/reading the media",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -12491,7 +12491,7 @@
             },
             {
               "name": "allTime",
-              "description": "If the ranking is based on all time instead of a season\/year",
+              "description": "If the ranking is based on all time instead of a season/year",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -12533,7 +12533,7 @@
           "enumValues": [
             {
               "name": "RATED",
-              "description": "Ranking is based on the media's ratings\/score",
+              "description": "Ranking is based on the media's ratings/score",
               "isDeprecated": false,
               "deprecationReason": null
             },
@@ -12601,7 +12601,7 @@
             },
             {
               "name": "status",
-              "description": "The watching\/reading status",
+              "description": "The watching/reading status",
               "args": [],
               "type": {
                 "kind": "ENUM",
@@ -12636,7 +12636,7 @@
             },
             {
               "name": "progress",
-              "description": "The amount of episodes\/chapters consumed by the user",
+              "description": "The amount of episodes/chapters consumed by the user",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -12660,7 +12660,7 @@
             },
             {
               "name": "repeat",
-              "description": "The amount of times the user has rewatched\/read the media",
+              "description": "The amount of times the user has rewatched/read the media",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -12834,7 +12834,7 @@
         {
           "kind": "SCALAR",
           "name": "Float",
-          "description": "The `Float` scalar type represents signed double-precision fractional\nvalues as specified by\n[IEEE 754](http:\/\/en.wikipedia.org\/wiki\/IEEE_floating_point). ",
+          "description": "The `Float` scalar type represents signed double-precision fractional\nvalues as specified by\n[IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point). ",
           "fields": null,
           "inputFields": null,
           "interfaces": null,
@@ -13579,7 +13579,7 @@
         {
           "kind": "OBJECT",
           "name": "StatusDistribution",
-          "description": "The distribution of the watching\/reading status of media or a user's list",
+          "description": "The distribution of the watching/reading status of media or a user's list",
           "fields": [
             {
               "name": "status",
@@ -21405,7 +21405,7 @@
               "args": [
                 {
                   "name": "about",
-                  "description": "User's about\/bio text",
+                  "description": "User's about/bio text",
                   "type": {
                     "kind": "SCALAR",
                     "name": "String",
@@ -21606,7 +21606,7 @@
                 },
                 {
                   "name": "status",
-                  "description": "The watching\/reading status",
+                  "description": "The watching/reading status",
                   "type": {
                     "kind": "ENUM",
                     "name": "MediaListStatus",
@@ -21636,7 +21636,7 @@
                 },
                 {
                   "name": "progress",
-                  "description": "The amount of episodes\/chapters consumed by the user",
+                  "description": "The amount of episodes/chapters consumed by the user",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Int",
@@ -21656,7 +21656,7 @@
                 },
                 {
                   "name": "repeat",
-                  "description": "The amount of times the user has rewatched\/read the media",
+                  "description": "The amount of times the user has rewatched/read the media",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Int",
@@ -21767,7 +21767,7 @@
               "args": [
                 {
                   "name": "status",
-                  "description": "The watching\/reading status",
+                  "description": "The watching/reading status",
                   "type": {
                     "kind": "ENUM",
                     "name": "MediaListStatus",
@@ -21797,7 +21797,7 @@
                 },
                 {
                   "name": "progress",
-                  "description": "The amount of episodes\/chapters consumed by the user",
+                  "description": "The amount of episodes/chapters consumed by the user",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Int",
@@ -21817,7 +21817,7 @@
                 },
                 {
                   "name": "repeat",
-                  "description": "The amount of times the user has rewatched\/read the media",
+                  "description": "The amount of times the user has rewatched/read the media",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Int",
@@ -22193,7 +22193,7 @@
               "args": [
                 {
                   "name": "activityId",
-                  "description": "The id of the activity to un\/subscribe",
+                  "description": "The id of the activity to un/subscribe",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Int",
@@ -22312,7 +22312,7 @@
                 },
                 {
                   "name": "type",
-                  "description": "The type of model to be un\/liked",
+                  "description": "The type of model to be un/liked",
                   "type": {
                     "kind": "ENUM",
                     "name": "LikeableType",
@@ -22349,7 +22349,7 @@
                 },
                 {
                   "name": "type",
-                  "description": "The type of model to be un\/liked",
+                  "description": "The type of model to be un/liked",
                   "type": {
                     "kind": "ENUM",
                     "name": "LikeableType",
@@ -22368,11 +22368,11 @@
             },
             {
               "name": "ToggleFollow",
-              "description": "Toggle the un\/following of a user",
+              "description": "Toggle the un/following of a user",
               "args": [
                 {
                   "name": "userId",
-                  "description": "The id of the user to un\/follow",
+                  "description": "The id of the user to un/follow",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Int",
@@ -22395,7 +22395,7 @@
               "args": [
                 {
                   "name": "animeId",
-                  "description": "The id of the anime to un\/favourite",
+                  "description": "The id of the anime to un/favourite",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Int",
@@ -22405,7 +22405,7 @@
                 },
                 {
                   "name": "mangaId",
-                  "description": "The id of the manga to un\/favourite",
+                  "description": "The id of the manga to un/favourite",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Int",
@@ -22415,7 +22415,7 @@
                 },
                 {
                   "name": "characterId",
-                  "description": "The id of the character to un\/favourite",
+                  "description": "The id of the character to un/favourite",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Int",
@@ -22425,7 +22425,7 @@
                 },
                 {
                   "name": "staffId",
-                  "description": "The id of the staff to un\/favourite",
+                  "description": "The id of the staff to un/favourite",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Int",
@@ -22435,7 +22435,7 @@
                 },
                 {
                   "name": "studioId",
-                  "description": "The id of the studio to un\/favourite",
+                  "description": "The id of the studio to un/favourite",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Int",
@@ -22458,7 +22458,7 @@
               "args": [
                 {
                   "name": "animeIds",
-                  "description": "The id of the anime to un\/favourite",
+                  "description": "The id of the anime to un/favourite",
                   "type": {
                     "kind": "LIST",
                     "name": null,
@@ -22472,7 +22472,7 @@
                 },
                 {
                   "name": "mangaIds",
-                  "description": "The id of the manga to un\/favourite",
+                  "description": "The id of the manga to un/favourite",
                   "type": {
                     "kind": "LIST",
                     "name": null,
@@ -22486,7 +22486,7 @@
                 },
                 {
                   "name": "characterIds",
-                  "description": "The id of the character to un\/favourite",
+                  "description": "The id of the character to un/favourite",
                   "type": {
                     "kind": "LIST",
                     "name": null,
@@ -22500,7 +22500,7 @@
                 },
                 {
                   "name": "staffIds",
-                  "description": "The id of the staff to un\/favourite",
+                  "description": "The id of the staff to un/favourite",
                   "type": {
                     "kind": "LIST",
                     "name": null,
@@ -22514,7 +22514,7 @@
                 },
                 {
                   "name": "studioIds",
-                  "description": "The id of the studio to un\/favourite",
+                  "description": "The id of the studio to un/favourite",
                   "type": {
                     "kind": "LIST",
                     "name": null,
@@ -22641,7 +22641,7 @@
                 },
                 {
                   "name": "summary",
-                  "description": "A short summary\/preview of the review. Min:20, Max:120 characters",
+                  "description": "A short summary/preview of the review. Min:20, Max:120 characters",
                   "type": {
                     "kind": "SCALAR",
                     "name": "String",
@@ -22651,7 +22651,7 @@
                 },
                 {
                   "name": "score",
-                  "description": "A short summary\/preview of the review. Min:20, Max:120 characters",
+                  "description": "A short summary/preview of the review. Min:20, Max:120 characters",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Int",
@@ -22897,7 +22897,7 @@
               "args": [
                 {
                   "name": "threadId",
-                  "description": "The id of the forum thread to un\/subscribe",
+                  "description": "The id of the forum thread to un/subscribe",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Int",
@@ -24978,7 +24978,7 @@
                 },
                 {
                   "name": "status",
-                  "description": "Filter by the watching\/reading status",
+                  "description": "Filter by the watching/reading status",
                   "type": {
                     "kind": "ENUM",
                     "name": "MediaListStatus",
@@ -25062,7 +25062,7 @@
                 },
                 {
                   "name": "status_in",
-                  "description": "Filter by the watching\/reading status",
+                  "description": "Filter by the watching/reading status",
                   "type": {
                     "kind": "LIST",
                     "name": null,
@@ -25076,7 +25076,7 @@
                 },
                 {
                   "name": "status_not_in",
-                  "description": "Filter by the watching\/reading status",
+                  "description": "Filter by the watching/reading status",
                   "type": {
                     "kind": "LIST",
                     "name": null,
@@ -25090,7 +25090,7 @@
                 },
                 {
                   "name": "status_not",
-                  "description": "Filter by the watching\/reading status",
+                  "description": "Filter by the watching/reading status",
                   "type": {
                     "kind": "ENUM",
                     "name": "MediaListStatus",
@@ -25794,7 +25794,7 @@
               "args": [
                 {
                   "name": "userId",
-                  "description": "User id of the follower\/followed",
+                  "description": "User id of the follower/followed",
                   "type": {
                     "kind": "NON_NULL",
                     "name": null,
@@ -25839,7 +25839,7 @@
               "args": [
                 {
                   "name": "userId",
-                  "description": "User id of the follower\/followed",
+                  "description": "User id of the follower/followed",
                   "type": {
                     "kind": "NON_NULL",
                     "name": null,
@@ -29347,11 +29347,7 @@
         {
           "name": "include",
           "description": "Directs the executor to include this field or fragment only when the `if` argument is true.",
-          "locations": [
-            "FIELD",
-            "FRAGMENT_SPREAD",
-            "INLINE_FRAGMENT"
-          ],
+          "locations": ["FIELD", "FRAGMENT_SPREAD", "INLINE_FRAGMENT"],
           "args": [
             {
               "name": "if",
@@ -29372,11 +29368,7 @@
         {
           "name": "skip",
           "description": "Directs the executor to skip this field or fragment when the `if` argument is true.",
-          "locations": [
-            "FIELD",
-            "FRAGMENT_SPREAD",
-            "INLINE_FRAGMENT"
-          ],
+          "locations": ["FIELD", "FRAGMENT_SPREAD", "INLINE_FRAGMENT"],
           "args": [
             {
               "name": "if",
@@ -29397,14 +29389,11 @@
         {
           "name": "deprecated",
           "description": "Marks an element of a GraphQL schema as no longer supported.",
-          "locations": [
-            "FIELD_DEFINITION",
-            "ENUM_VALUE"
-          ],
+          "locations": ["FIELD_DEFINITION", "ENUM_VALUE"],
           "args": [
             {
               "name": "reason",
-              "description": "Explains why this element was deprecated, usually also including a suggestion for how to access supported similar data. Formatted in [Markdown](https:\/\/daringfireball.net\/projects\/markdown\/).",
+              "description": "Explains why this element was deprecated, usually also including a suggestion for how to access supported similar data. Formatted in [Markdown](https://daringfireball.net/projects/markdown/).",
               "type": {
                 "kind": "SCALAR",
                 "name": "String",

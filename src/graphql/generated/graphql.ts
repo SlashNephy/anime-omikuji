@@ -1,3 +1,5 @@
+/* eslint-disable */
+import type { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core'
 export type Maybe<T> = T | null
 export type InputMaybe<T> = Maybe<T>
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] }
@@ -10,7 +12,9 @@ export type Scalars = {
   Boolean: boolean
   Int: number
   Float: number
+  /** ISO 3166-1 alpha-2 country code */
   CountryCode: unknown
+  /** 8 digit long date integer (YYYYMMDD). Unknown dates represented by 0. E.g. 2016: 20160000, May 1976: 19760500 */
   FuzzyDateInt: unknown
   Json: unknown
 }
@@ -163,28 +167,26 @@ export type ActivityReplySubscribedNotification = {
 }
 
 /** Activity sort enums */
-export const ActivitySort = {
-  Id: 'ID',
-  IdDesc: 'ID_DESC',
-  Pinned: 'PINNED',
-} as const
+export enum ActivitySort {
+  Id = 'ID',
+  IdDesc = 'ID_DESC',
+  Pinned = 'PINNED',
+}
 
-export type ActivitySort = (typeof ActivitySort)[keyof typeof ActivitySort]
 /** Activity type enum. */
-export const ActivityType = {
+export enum ActivityType {
   /** A anime list update activity */
-  AnimeList: 'ANIME_LIST',
+  AnimeList = 'ANIME_LIST',
   /** A manga list update activity */
-  MangaList: 'MANGA_LIST',
+  MangaList = 'MANGA_LIST',
   /** Anime & Manga list update, only used in query arguments */
-  MediaList: 'MEDIA_LIST',
+  MediaList = 'MEDIA_LIST',
   /** A text message activity sent to another user */
-  Message: 'MESSAGE',
+  Message = 'MESSAGE',
   /** A text activity */
-  Text: 'TEXT',
-} as const
+  Text = 'TEXT',
+}
 
-export type ActivityType = (typeof ActivityType)[keyof typeof ActivityType]
 /** Activity union type */
 export type ActivityUnion = ListActivity | MessageActivity | TextActivity
 
@@ -253,18 +255,17 @@ export type AiringScheduleInput = {
 }
 
 /** Airing schedule sort enums */
-export const AiringSort = {
-  Episode: 'EPISODE',
-  EpisodeDesc: 'EPISODE_DESC',
-  Id: 'ID',
-  IdDesc: 'ID_DESC',
-  MediaId: 'MEDIA_ID',
-  MediaIdDesc: 'MEDIA_ID_DESC',
-  Time: 'TIME',
-  TimeDesc: 'TIME_DESC',
-} as const
+export enum AiringSort {
+  Episode = 'EPISODE',
+  EpisodeDesc = 'EPISODE_DESC',
+  Id = 'ID',
+  IdDesc = 'ID_DESC',
+  MediaId = 'MEDIA_ID',
+  MediaIdDesc = 'MEDIA_ID_DESC',
+  Time = 'TIME',
+  TimeDesc = 'TIME_DESC',
+}
 
-export type AiringSort = (typeof AiringSort)[keyof typeof AiringSort]
 export type AniChartHighlightInput = {
   highlight?: InputMaybe<Scalars['String']>
   mediaId?: InputMaybe<Scalars['Int']>
@@ -406,30 +407,28 @@ export type CharacterNameInput = {
 }
 
 /** The role the character plays in the media */
-export const CharacterRole = {
+export enum CharacterRole {
   /** A background character in the media */
-  Background: 'BACKGROUND',
+  Background = 'BACKGROUND',
   /** A primary character role in the media */
-  Main: 'MAIN',
+  Main = 'MAIN',
   /** A supporting character role in the media */
-  Supporting: 'SUPPORTING',
-} as const
+  Supporting = 'SUPPORTING',
+}
 
-export type CharacterRole = (typeof CharacterRole)[keyof typeof CharacterRole]
 /** Character sort enums */
-export const CharacterSort = {
-  Favourites: 'FAVOURITES',
-  FavouritesDesc: 'FAVOURITES_DESC',
-  Id: 'ID',
-  IdDesc: 'ID_DESC',
+export enum CharacterSort {
+  Favourites = 'FAVOURITES',
+  FavouritesDesc = 'FAVOURITES_DESC',
+  Id = 'ID',
+  IdDesc = 'ID_DESC',
   /** Order manually decided by moderators */
-  Relevance: 'RELEVANCE',
-  Role: 'ROLE',
-  RoleDesc: 'ROLE_DESC',
-  SearchMatch: 'SEARCH_MATCH',
-} as const
+  Relevance = 'RELEVANCE',
+  Role = 'ROLE',
+  RoleDesc = 'ROLE_DESC',
+  SearchMatch = 'SEARCH_MATCH',
+}
 
-export type CharacterSort = (typeof CharacterSort)[keyof typeof CharacterSort]
 /** A submission for a character that features in an anime or manga */
 export type CharacterSubmission = {
   /** Data Mod assigned to handle the submission */
@@ -476,20 +475,18 @@ export type Deleted = {
   deleted?: Maybe<Scalars['Boolean']>
 }
 
-export const ExternalLinkMediaType = {
-  Anime: 'ANIME',
-  Manga: 'MANGA',
-  Staff: 'STAFF',
-} as const
+export enum ExternalLinkMediaType {
+  Anime = 'ANIME',
+  Manga = 'MANGA',
+  Staff = 'STAFF',
+}
 
-export type ExternalLinkMediaType = (typeof ExternalLinkMediaType)[keyof typeof ExternalLinkMediaType]
-export const ExternalLinkType = {
-  Info: 'INFO',
-  Social: 'SOCIAL',
-  Streaming: 'STREAMING',
-} as const
+export enum ExternalLinkType {
+  Info = 'INFO',
+  Social = 'SOCIAL',
+  Streaming = 'STREAMING',
+}
 
-export type ExternalLinkType = (typeof ExternalLinkType)[keyof typeof ExternalLinkType]
 /** User's favourite anime, manga, characters, staff & studios */
 export type Favourites = {
   /** Favourite anime */
@@ -972,14 +969,13 @@ export type InternalPageUsersArgs = {
 }
 
 /** Types that can be liked */
-export const LikeableType = {
-  Activity: 'ACTIVITY',
-  ActivityReply: 'ACTIVITY_REPLY',
-  Thread: 'THREAD',
-  ThreadComment: 'THREAD_COMMENT',
-} as const
+export enum LikeableType {
+  Activity = 'ACTIVITY',
+  ActivityReply = 'ACTIVITY_REPLY',
+  Thread = 'THREAD',
+  ThreadComment = 'THREAD_COMMENT',
+}
 
-export type LikeableType = (typeof LikeableType)[keyof typeof LikeableType]
 /** Likeable union type */
 export type LikeableUnion = ActivityReply | ListActivity | MessageActivity | TextActivity | Thread | ThreadComment
 
@@ -1364,30 +1360,29 @@ export type MediaExternalLinkInput = {
 }
 
 /** The format the media was released in */
-export const MediaFormat = {
+export enum MediaFormat {
   /** Professionally published manga with more than one chapter */
-  Manga: 'MANGA',
+  Manga = 'MANGA',
   /** Anime movies with a theatrical release */
-  Movie: 'MOVIE',
+  Movie = 'MOVIE',
   /** Short anime released as a music video */
-  Music: 'MUSIC',
+  Music = 'MUSIC',
   /** Written books released as a series of light novels */
-  Novel: 'NOVEL',
+  Novel = 'NOVEL',
   /** (Original Net Animation) Anime that have been originally released online or are only available through streaming services. */
-  Ona: 'ONA',
+  Ona = 'ONA',
   /** Manga with just one chapter */
-  OneShot: 'ONE_SHOT',
+  OneShot = 'ONE_SHOT',
   /** (Original Video Animation) Anime that have been released directly on DVD/Blu-ray without originally going through a theatrical release or television broadcast */
-  Ova: 'OVA',
+  Ova = 'OVA',
   /** Special episodes that have been included in DVD/Blu-ray releases, picture dramas, pilots, etc */
-  Special: 'SPECIAL',
+  Special = 'SPECIAL',
   /** Anime broadcast on television */
-  Tv: 'TV',
+  Tv = 'TV',
   /** Anime which are under 15 minutes in length and broadcast on television */
-  TvShort: 'TV_SHORT',
-} as const
+  TvShort = 'TV_SHORT',
+}
 
-export type MediaFormat = (typeof MediaFormat)[keyof typeof MediaFormat]
 /** List of anime or manga */
 export type MediaList = {
   /** Map of advanced scores with name keys */
@@ -1521,57 +1516,55 @@ export type MediaListOptionsInput = {
 }
 
 /** Media list sort enums */
-export const MediaListSort = {
-  AddedTime: 'ADDED_TIME',
-  AddedTimeDesc: 'ADDED_TIME_DESC',
-  FinishedOn: 'FINISHED_ON',
-  FinishedOnDesc: 'FINISHED_ON_DESC',
-  MediaId: 'MEDIA_ID',
-  MediaIdDesc: 'MEDIA_ID_DESC',
-  MediaPopularity: 'MEDIA_POPULARITY',
-  MediaPopularityDesc: 'MEDIA_POPULARITY_DESC',
-  MediaTitleEnglish: 'MEDIA_TITLE_ENGLISH',
-  MediaTitleEnglishDesc: 'MEDIA_TITLE_ENGLISH_DESC',
-  MediaTitleNative: 'MEDIA_TITLE_NATIVE',
-  MediaTitleNativeDesc: 'MEDIA_TITLE_NATIVE_DESC',
-  MediaTitleRomaji: 'MEDIA_TITLE_ROMAJI',
-  MediaTitleRomajiDesc: 'MEDIA_TITLE_ROMAJI_DESC',
-  Priority: 'PRIORITY',
-  PriorityDesc: 'PRIORITY_DESC',
-  Progress: 'PROGRESS',
-  ProgressDesc: 'PROGRESS_DESC',
-  ProgressVolumes: 'PROGRESS_VOLUMES',
-  ProgressVolumesDesc: 'PROGRESS_VOLUMES_DESC',
-  Repeat: 'REPEAT',
-  RepeatDesc: 'REPEAT_DESC',
-  Score: 'SCORE',
-  ScoreDesc: 'SCORE_DESC',
-  StartedOn: 'STARTED_ON',
-  StartedOnDesc: 'STARTED_ON_DESC',
-  Status: 'STATUS',
-  StatusDesc: 'STATUS_DESC',
-  UpdatedTime: 'UPDATED_TIME',
-  UpdatedTimeDesc: 'UPDATED_TIME_DESC',
-} as const
+export enum MediaListSort {
+  AddedTime = 'ADDED_TIME',
+  AddedTimeDesc = 'ADDED_TIME_DESC',
+  FinishedOn = 'FINISHED_ON',
+  FinishedOnDesc = 'FINISHED_ON_DESC',
+  MediaId = 'MEDIA_ID',
+  MediaIdDesc = 'MEDIA_ID_DESC',
+  MediaPopularity = 'MEDIA_POPULARITY',
+  MediaPopularityDesc = 'MEDIA_POPULARITY_DESC',
+  MediaTitleEnglish = 'MEDIA_TITLE_ENGLISH',
+  MediaTitleEnglishDesc = 'MEDIA_TITLE_ENGLISH_DESC',
+  MediaTitleNative = 'MEDIA_TITLE_NATIVE',
+  MediaTitleNativeDesc = 'MEDIA_TITLE_NATIVE_DESC',
+  MediaTitleRomaji = 'MEDIA_TITLE_ROMAJI',
+  MediaTitleRomajiDesc = 'MEDIA_TITLE_ROMAJI_DESC',
+  Priority = 'PRIORITY',
+  PriorityDesc = 'PRIORITY_DESC',
+  Progress = 'PROGRESS',
+  ProgressDesc = 'PROGRESS_DESC',
+  ProgressVolumes = 'PROGRESS_VOLUMES',
+  ProgressVolumesDesc = 'PROGRESS_VOLUMES_DESC',
+  Repeat = 'REPEAT',
+  RepeatDesc = 'REPEAT_DESC',
+  Score = 'SCORE',
+  ScoreDesc = 'SCORE_DESC',
+  StartedOn = 'STARTED_ON',
+  StartedOnDesc = 'STARTED_ON_DESC',
+  Status = 'STATUS',
+  StatusDesc = 'STATUS_DESC',
+  UpdatedTime = 'UPDATED_TIME',
+  UpdatedTimeDesc = 'UPDATED_TIME_DESC',
+}
 
-export type MediaListSort = (typeof MediaListSort)[keyof typeof MediaListSort]
 /** Media list watching/reading status enum. */
-export const MediaListStatus = {
+export enum MediaListStatus {
   /** Finished watching/reading */
-  Completed: 'COMPLETED',
+  Completed = 'COMPLETED',
   /** Currently watching/reading */
-  Current: 'CURRENT',
+  Current = 'CURRENT',
   /** Stopped watching/reading before completing */
-  Dropped: 'DROPPED',
+  Dropped = 'DROPPED',
   /** Paused watching/reading */
-  Paused: 'PAUSED',
+  Paused = 'PAUSED',
   /** Planning to watch/read */
-  Planning: 'PLANNING',
+  Planning = 'PLANNING',
   /** Re-watching/reading */
-  Repeating: 'REPEATING',
-} as const
+  Repeating = 'REPEATING',
+}
 
-export type MediaListStatus = (typeof MediaListStatus)[keyof typeof MediaListStatus]
 /** A user's list options for anime or manga lists */
 export type MediaListTypeOptions = {
   /** The names of the user's advanced scoring sections */
@@ -1632,134 +1625,129 @@ export type MediaRank = {
 }
 
 /** The type of ranking */
-export const MediaRankType = {
+export enum MediaRankType {
   /** Ranking is based on the media's popularity */
-  Popular: 'POPULAR',
+  Popular = 'POPULAR',
   /** Ranking is based on the media's ratings/score */
-  Rated: 'RATED',
-} as const
+  Rated = 'RATED',
+}
 
-export type MediaRankType = (typeof MediaRankType)[keyof typeof MediaRankType]
 /** Type of relation media has to its parent. */
-export const MediaRelation = {
+export enum MediaRelation {
   /** An adaption of this media into a different format */
-  Adaptation: 'ADAPTATION',
+  Adaptation = 'ADAPTATION',
   /** An alternative version of the same media */
-  Alternative: 'ALTERNATIVE',
+  Alternative = 'ALTERNATIVE',
   /** Shares at least 1 character */
-  Character: 'CHARACTER',
+  Character = 'CHARACTER',
   /** Version 2 only. */
-  Compilation: 'COMPILATION',
+  Compilation = 'COMPILATION',
   /** Version 2 only. */
-  Contains: 'CONTAINS',
+  Contains = 'CONTAINS',
   /** Other */
-  Other: 'OTHER',
+  Other = 'OTHER',
   /** The media a side story is from */
-  Parent: 'PARENT',
+  Parent = 'PARENT',
   /** Released before the relation */
-  Prequel: 'PREQUEL',
+  Prequel = 'PREQUEL',
   /** Released after the relation */
-  Sequel: 'SEQUEL',
+  Sequel = 'SEQUEL',
   /** A side story of the parent media */
-  SideStory: 'SIDE_STORY',
+  SideStory = 'SIDE_STORY',
   /** Version 2 only. The source material the media was adapted from */
-  Source: 'SOURCE',
+  Source = 'SOURCE',
   /** An alternative version of the media with a different primary focus */
-  SpinOff: 'SPIN_OFF',
+  SpinOff = 'SPIN_OFF',
   /** A shortened and summarized version */
-  Summary: 'SUMMARY',
-} as const
+  Summary = 'SUMMARY',
+}
 
-export type MediaRelation = (typeof MediaRelation)[keyof typeof MediaRelation]
-export const MediaSeason = {
+export enum MediaSeason {
   /** Months September to November */
-  Fall: 'FALL',
+  Fall = 'FALL',
   /** Months March to May */
-  Spring: 'SPRING',
+  Spring = 'SPRING',
   /** Months June to August */
-  Summer: 'SUMMER',
+  Summer = 'SUMMER',
   /** Months December to February */
-  Winter: 'WINTER',
-} as const
+  Winter = 'WINTER',
+}
 
-export type MediaSeason = (typeof MediaSeason)[keyof typeof MediaSeason]
 /** Media sort enums */
-export const MediaSort = {
-  Chapters: 'CHAPTERS',
-  ChaptersDesc: 'CHAPTERS_DESC',
-  Duration: 'DURATION',
-  DurationDesc: 'DURATION_DESC',
-  EndDate: 'END_DATE',
-  EndDateDesc: 'END_DATE_DESC',
-  Episodes: 'EPISODES',
-  EpisodesDesc: 'EPISODES_DESC',
-  Favourites: 'FAVOURITES',
-  FavouritesDesc: 'FAVOURITES_DESC',
-  Format: 'FORMAT',
-  FormatDesc: 'FORMAT_DESC',
-  Id: 'ID',
-  IdDesc: 'ID_DESC',
-  Popularity: 'POPULARITY',
-  PopularityDesc: 'POPULARITY_DESC',
-  Score: 'SCORE',
-  ScoreDesc: 'SCORE_DESC',
-  SearchMatch: 'SEARCH_MATCH',
-  StartDate: 'START_DATE',
-  StartDateDesc: 'START_DATE_DESC',
-  Status: 'STATUS',
-  StatusDesc: 'STATUS_DESC',
-  TitleEnglish: 'TITLE_ENGLISH',
-  TitleEnglishDesc: 'TITLE_ENGLISH_DESC',
-  TitleNative: 'TITLE_NATIVE',
-  TitleNativeDesc: 'TITLE_NATIVE_DESC',
-  TitleRomaji: 'TITLE_ROMAJI',
-  TitleRomajiDesc: 'TITLE_ROMAJI_DESC',
-  Trending: 'TRENDING',
-  TrendingDesc: 'TRENDING_DESC',
-  Type: 'TYPE',
-  TypeDesc: 'TYPE_DESC',
-  UpdatedAt: 'UPDATED_AT',
-  UpdatedAtDesc: 'UPDATED_AT_DESC',
-  Volumes: 'VOLUMES',
-  VolumesDesc: 'VOLUMES_DESC',
-} as const
+export enum MediaSort {
+  Chapters = 'CHAPTERS',
+  ChaptersDesc = 'CHAPTERS_DESC',
+  Duration = 'DURATION',
+  DurationDesc = 'DURATION_DESC',
+  EndDate = 'END_DATE',
+  EndDateDesc = 'END_DATE_DESC',
+  Episodes = 'EPISODES',
+  EpisodesDesc = 'EPISODES_DESC',
+  Favourites = 'FAVOURITES',
+  FavouritesDesc = 'FAVOURITES_DESC',
+  Format = 'FORMAT',
+  FormatDesc = 'FORMAT_DESC',
+  Id = 'ID',
+  IdDesc = 'ID_DESC',
+  Popularity = 'POPULARITY',
+  PopularityDesc = 'POPULARITY_DESC',
+  Score = 'SCORE',
+  ScoreDesc = 'SCORE_DESC',
+  SearchMatch = 'SEARCH_MATCH',
+  StartDate = 'START_DATE',
+  StartDateDesc = 'START_DATE_DESC',
+  Status = 'STATUS',
+  StatusDesc = 'STATUS_DESC',
+  TitleEnglish = 'TITLE_ENGLISH',
+  TitleEnglishDesc = 'TITLE_ENGLISH_DESC',
+  TitleNative = 'TITLE_NATIVE',
+  TitleNativeDesc = 'TITLE_NATIVE_DESC',
+  TitleRomaji = 'TITLE_ROMAJI',
+  TitleRomajiDesc = 'TITLE_ROMAJI_DESC',
+  Trending = 'TRENDING',
+  TrendingDesc = 'TRENDING_DESC',
+  Type = 'TYPE',
+  TypeDesc = 'TYPE_DESC',
+  UpdatedAt = 'UPDATED_AT',
+  UpdatedAtDesc = 'UPDATED_AT_DESC',
+  Volumes = 'VOLUMES',
+  VolumesDesc = 'VOLUMES_DESC',
+}
 
-export type MediaSort = (typeof MediaSort)[keyof typeof MediaSort]
 /** Source type the media was adapted from */
-export const MediaSource = {
+export enum MediaSource {
   /** Version 2+ only. Japanese Anime */
-  Anime: 'ANIME',
+  Anime = 'ANIME',
   /** Version 3 only. Comics excluding manga */
-  Comic: 'COMIC',
+  Comic = 'COMIC',
   /** Version 2+ only. Self-published works */
-  Doujinshi: 'DOUJINSHI',
+  Doujinshi = 'DOUJINSHI',
   /** Version 3 only. Games excluding video games */
-  Game: 'GAME',
+  Game = 'GAME',
   /** Written work published in volumes */
-  LightNovel: 'LIGHT_NOVEL',
+  LightNovel = 'LIGHT_NOVEL',
   /** Version 3 only. Live action media such as movies or TV show */
-  LiveAction: 'LIVE_ACTION',
+  LiveAction = 'LIVE_ACTION',
   /** Asian comic book */
-  Manga: 'MANGA',
+  Manga = 'MANGA',
   /** Version 3 only. Multimedia project */
-  MultimediaProject: 'MULTIMEDIA_PROJECT',
+  MultimediaProject = 'MULTIMEDIA_PROJECT',
   /** Version 2+ only. Written works not published in volumes */
-  Novel: 'NOVEL',
+  Novel = 'NOVEL',
   /** An original production not based of another work */
-  Original: 'ORIGINAL',
+  Original = 'ORIGINAL',
   /** Other */
-  Other: 'OTHER',
+  Other = 'OTHER',
   /** Version 3 only. Picture book */
-  PictureBook: 'PICTURE_BOOK',
+  PictureBook = 'PICTURE_BOOK',
   /** Video game */
-  VideoGame: 'VIDEO_GAME',
+  VideoGame = 'VIDEO_GAME',
   /** Video game driven primary by text and narrative */
-  VisualNovel: 'VISUAL_NOVEL',
+  VisualNovel = 'VISUAL_NOVEL',
   /** Version 3 only. Written works published online */
-  WebNovel: 'WEB_NOVEL',
-} as const
+  WebNovel = 'WEB_NOVEL',
+}
 
-export type MediaSource = (typeof MediaSource)[keyof typeof MediaSource]
 /** A media's statistics */
 export type MediaStats = {
   /** @deprecated Replaced by MediaTrends */
@@ -1769,20 +1757,19 @@ export type MediaStats = {
 }
 
 /** The current releasing status of the media */
-export const MediaStatus = {
+export enum MediaStatus {
   /** Ended before the work could be finished */
-  Cancelled: 'CANCELLED',
+  Cancelled = 'CANCELLED',
   /** Has completed and is no longer being released */
-  Finished: 'FINISHED',
+  Finished = 'FINISHED',
   /** Version 2 only. Is currently paused from releasing and will resume at a later date */
-  Hiatus: 'HIATUS',
+  Hiatus = 'HIATUS',
   /** To be released at a later date */
-  NotYetReleased: 'NOT_YET_RELEASED',
+  NotYetReleased = 'NOT_YET_RELEASED',
   /** Currently releasing */
-  Releasing: 'RELEASING',
-} as const
+  Releasing = 'RELEASING',
+}
 
-export type MediaStatus = (typeof MediaStatus)[keyof typeof MediaStatus]
 /** Data and links to legal streaming episodes on external sites */
 export type MediaStreamingEpisode = {
   /** The site location of the streaming episodes */
@@ -1954,33 +1941,31 @@ export type MediaTrendEdge = {
 }
 
 /** Media trend sort enums */
-export const MediaTrendSort = {
-  Date: 'DATE',
-  DateDesc: 'DATE_DESC',
-  Episode: 'EPISODE',
-  EpisodeDesc: 'EPISODE_DESC',
-  Id: 'ID',
-  IdDesc: 'ID_DESC',
-  MediaId: 'MEDIA_ID',
-  MediaIdDesc: 'MEDIA_ID_DESC',
-  Popularity: 'POPULARITY',
-  PopularityDesc: 'POPULARITY_DESC',
-  Score: 'SCORE',
-  ScoreDesc: 'SCORE_DESC',
-  Trending: 'TRENDING',
-  TrendingDesc: 'TRENDING_DESC',
-} as const
+export enum MediaTrendSort {
+  Date = 'DATE',
+  DateDesc = 'DATE_DESC',
+  Episode = 'EPISODE',
+  EpisodeDesc = 'EPISODE_DESC',
+  Id = 'ID',
+  IdDesc = 'ID_DESC',
+  MediaId = 'MEDIA_ID',
+  MediaIdDesc = 'MEDIA_ID_DESC',
+  Popularity = 'POPULARITY',
+  PopularityDesc = 'POPULARITY_DESC',
+  Score = 'SCORE',
+  ScoreDesc = 'SCORE_DESC',
+  Trending = 'TRENDING',
+  TrendingDesc = 'TRENDING_DESC',
+}
 
-export type MediaTrendSort = (typeof MediaTrendSort)[keyof typeof MediaTrendSort]
 /** Media type enum, anime or manga. */
-export const MediaType = {
+export enum MediaType {
   /** Japanese Anime */
-  Anime: 'ANIME',
+  Anime = 'ANIME',
   /** Asian comic */
-  Manga: 'MANGA',
-} as const
+  Manga = 'MANGA',
+}
 
-export type MediaType = (typeof MediaType)[keyof typeof MediaType]
 /** User message activity */
 export type MessageActivity = {
   /** The time the activity was created at */
@@ -2036,49 +2021,47 @@ export type ModAction = {
   user?: Maybe<User>
 }
 
-export const ModActionType = {
-  Anon: 'ANON',
-  Ban: 'BAN',
-  Delete: 'DELETE',
-  Edit: 'EDIT',
-  Expire: 'EXPIRE',
-  Note: 'NOTE',
-  Report: 'REPORT',
-  Reset: 'RESET',
-} as const
+export enum ModActionType {
+  Anon = 'ANON',
+  Ban = 'BAN',
+  Delete = 'DELETE',
+  Edit = 'EDIT',
+  Expire = 'EXPIRE',
+  Note = 'NOTE',
+  Report = 'REPORT',
+  Reset = 'RESET',
+}
 
-export type ModActionType = (typeof ModActionType)[keyof typeof ModActionType]
 /** Mod role enums */
-export const ModRole = {
+export enum ModRole {
   /** An AniList administrator */
-  Admin: 'ADMIN',
+  Admin = 'ADMIN',
   /** An anime data moderator */
-  AnimeData: 'ANIME_DATA',
+  AnimeData = 'ANIME_DATA',
   /** A community moderator */
-  Community: 'COMMUNITY',
+  Community = 'COMMUNITY',
   /** An AniList developer */
-  Developer: 'DEVELOPER',
+  Developer = 'DEVELOPER',
   /** A discord community moderator */
-  DiscordCommunity: 'DISCORD_COMMUNITY',
+  DiscordCommunity = 'DISCORD_COMMUNITY',
   /** A lead anime data moderator */
-  LeadAnimeData: 'LEAD_ANIME_DATA',
+  LeadAnimeData = 'LEAD_ANIME_DATA',
   /** A lead community moderator */
-  LeadCommunity: 'LEAD_COMMUNITY',
+  LeadCommunity = 'LEAD_COMMUNITY',
   /** A head developer of AniList */
-  LeadDeveloper: 'LEAD_DEVELOPER',
+  LeadDeveloper = 'LEAD_DEVELOPER',
   /** A lead manga data moderator */
-  LeadMangaData: 'LEAD_MANGA_DATA',
+  LeadMangaData = 'LEAD_MANGA_DATA',
   /** A lead social media moderator */
-  LeadSocialMedia: 'LEAD_SOCIAL_MEDIA',
+  LeadSocialMedia = 'LEAD_SOCIAL_MEDIA',
   /** A manga data moderator */
-  MangaData: 'MANGA_DATA',
+  MangaData = 'MANGA_DATA',
   /** A retired moderator */
-  Retired: 'RETIRED',
+  Retired = 'RETIRED',
   /** A social media moderator */
-  SocialMedia: 'SOCIAL_MEDIA',
-} as const
+  SocialMedia = 'SOCIAL_MEDIA',
+}
 
-export type ModRole = (typeof ModRole)[keyof typeof ModRole]
 export type Mutation = {
   /** Delete an activity item of the authenticated users */
   DeleteActivity?: Maybe<Deleted>
@@ -2367,44 +2350,43 @@ export type NotificationOptionInput = {
 }
 
 /** Notification type enum */
-export const NotificationType = {
+export enum NotificationType {
   /** A user has liked your activity */
-  ActivityLike: 'ACTIVITY_LIKE',
+  ActivityLike = 'ACTIVITY_LIKE',
   /** A user has mentioned you in their activity */
-  ActivityMention: 'ACTIVITY_MENTION',
+  ActivityMention = 'ACTIVITY_MENTION',
   /** A user has sent you message */
-  ActivityMessage: 'ACTIVITY_MESSAGE',
+  ActivityMessage = 'ACTIVITY_MESSAGE',
   /** A user has replied to your activity */
-  ActivityReply: 'ACTIVITY_REPLY',
+  ActivityReply = 'ACTIVITY_REPLY',
   /** A user has liked your activity reply */
-  ActivityReplyLike: 'ACTIVITY_REPLY_LIKE',
+  ActivityReplyLike = 'ACTIVITY_REPLY_LIKE',
   /** A user has replied to activity you have also replied to */
-  ActivityReplySubscribed: 'ACTIVITY_REPLY_SUBSCRIBED',
+  ActivityReplySubscribed = 'ACTIVITY_REPLY_SUBSCRIBED',
   /** An anime you are currently watching has aired */
-  Airing: 'AIRING',
+  Airing = 'AIRING',
   /** A user has followed you */
-  Following: 'FOLLOWING',
+  Following = 'FOLLOWING',
   /** An anime or manga has had a data change that affects how a user may track it in their lists */
-  MediaDataChange: 'MEDIA_DATA_CHANGE',
+  MediaDataChange = 'MEDIA_DATA_CHANGE',
   /** An anime or manga on the user's list has been deleted from the site */
-  MediaDeletion: 'MEDIA_DELETION',
+  MediaDeletion = 'MEDIA_DELETION',
   /** Anime or manga entries on the user's list have been merged into a single entry */
-  MediaMerge: 'MEDIA_MERGE',
+  MediaMerge = 'MEDIA_MERGE',
   /** A new anime or manga has been added to the site where its related media is on the user's list */
-  RelatedMediaAddition: 'RELATED_MEDIA_ADDITION',
+  RelatedMediaAddition = 'RELATED_MEDIA_ADDITION',
   /** A user has liked your forum comment */
-  ThreadCommentLike: 'THREAD_COMMENT_LIKE',
+  ThreadCommentLike = 'THREAD_COMMENT_LIKE',
   /** A user has mentioned you in a forum comment */
-  ThreadCommentMention: 'THREAD_COMMENT_MENTION',
+  ThreadCommentMention = 'THREAD_COMMENT_MENTION',
   /** A user has replied to your forum comment */
-  ThreadCommentReply: 'THREAD_COMMENT_REPLY',
+  ThreadCommentReply = 'THREAD_COMMENT_REPLY',
   /** A user has liked your forum thread */
-  ThreadLike: 'THREAD_LIKE',
+  ThreadLike = 'THREAD_LIKE',
   /** A user has commented in one of your subscribed forum threads */
-  ThreadSubscribed: 'THREAD_SUBSCRIBED',
-} as const
+  ThreadSubscribed = 'THREAD_SUBSCRIBED',
+}
 
-export type NotificationType = (typeof NotificationType)[keyof typeof NotificationType]
 /** Notification union type */
 export type NotificationUnion =
   | ActivityLikeNotification
@@ -3177,22 +3159,20 @@ export type RecommendationEdge = {
 }
 
 /** Recommendation rating enums */
-export const RecommendationRating = {
-  NoRating: 'NO_RATING',
-  RateDown: 'RATE_DOWN',
-  RateUp: 'RATE_UP',
-} as const
+export enum RecommendationRating {
+  NoRating = 'NO_RATING',
+  RateDown = 'RATE_DOWN',
+  RateUp = 'RATE_UP',
+}
 
-export type RecommendationRating = (typeof RecommendationRating)[keyof typeof RecommendationRating]
 /** Recommendation sort enums */
-export const RecommendationSort = {
-  Id: 'ID',
-  IdDesc: 'ID_DESC',
-  Rating: 'RATING',
-  RatingDesc: 'RATING_DESC',
-} as const
+export enum RecommendationSort {
+  Id = 'ID',
+  IdDesc = 'ID_DESC',
+  Rating = 'RATING',
+  RatingDesc = 'RATING_DESC',
+}
 
-export type RecommendationSort = (typeof RecommendationSort)[keyof typeof RecommendationSort]
 /** Notification for when new media is added to the site */
 export type RelatedMediaAdditionNotification = {
   /** The notification context text */
@@ -3273,28 +3253,26 @@ export type ReviewEdge = {
 }
 
 /** Review rating enums */
-export const ReviewRating = {
-  DownVote: 'DOWN_VOTE',
-  NoVote: 'NO_VOTE',
-  UpVote: 'UP_VOTE',
-} as const
+export enum ReviewRating {
+  DownVote = 'DOWN_VOTE',
+  NoVote = 'NO_VOTE',
+  UpVote = 'UP_VOTE',
+}
 
-export type ReviewRating = (typeof ReviewRating)[keyof typeof ReviewRating]
 /** Review sort enums */
-export const ReviewSort = {
-  CreatedAt: 'CREATED_AT',
-  CreatedAtDesc: 'CREATED_AT_DESC',
-  Id: 'ID',
-  IdDesc: 'ID_DESC',
-  Rating: 'RATING',
-  RatingDesc: 'RATING_DESC',
-  Score: 'SCORE',
-  ScoreDesc: 'SCORE_DESC',
-  UpdatedAt: 'UPDATED_AT',
-  UpdatedAtDesc: 'UPDATED_AT_DESC',
-} as const
+export enum ReviewSort {
+  CreatedAt = 'CREATED_AT',
+  CreatedAtDesc = 'CREATED_AT_DESC',
+  Id = 'ID',
+  IdDesc = 'ID_DESC',
+  Rating = 'RATING',
+  RatingDesc = 'RATING_DESC',
+  Score = 'SCORE',
+  ScoreDesc = 'SCORE_DESC',
+  UpdatedAt = 'UPDATED_AT',
+  UpdatedAtDesc = 'UPDATED_AT_DESC',
+}
 
-export type ReviewSort = (typeof ReviewSort)[keyof typeof ReviewSort]
 /** Feed of mod edit activity */
 export type RevisionHistory = {
   /** The action taken on the objects */
@@ -3320,12 +3298,11 @@ export type RevisionHistory = {
 }
 
 /** Revision history actions */
-export const RevisionHistoryAction = {
-  Create: 'CREATE',
-  Edit: 'EDIT',
-} as const
+export enum RevisionHistoryAction {
+  Create = 'CREATE',
+  Edit = 'EDIT',
+}
 
-export type RevisionHistoryAction = (typeof RevisionHistoryAction)[keyof typeof RevisionHistoryAction]
 /** A user's list score distribution. */
 export type ScoreDistribution = {
   /** The amount of list entries with this score */
@@ -3334,20 +3311,19 @@ export type ScoreDistribution = {
 }
 
 /** Media list scoring type */
-export const ScoreFormat = {
+export enum ScoreFormat {
   /** An integer from 0-3. Should be represented in Smileys. 0 => No Score, 1 => :(, 2 => :|, 3 => :) */
-  Point_3: 'POINT_3',
+  Point_3 = 'POINT_3',
   /** An integer from 0-5. Should be represented in Stars */
-  Point_5: 'POINT_5',
+  Point_5 = 'POINT_5',
   /** An integer from 0-10 */
-  Point_10: 'POINT_10',
+  Point_10 = 'POINT_10',
   /** A float from 0-10 with 1 decimal place */
-  Point_10Decimal: 'POINT_10_DECIMAL',
+  Point_10Decimal = 'POINT_10_DECIMAL',
   /** An integer from 0-100 */
-  Point_100: 'POINT_100',
-} as const
+  Point_100 = 'POINT_100',
+}
 
-export type ScoreFormat = (typeof ScoreFormat)[keyof typeof ScoreFormat]
 export type SiteStatistics = {
   anime?: Maybe<SiteTrendConnection>
   characters?: Maybe<SiteTrendConnection>
@@ -3422,16 +3398,15 @@ export type SiteTrendEdge = {
 }
 
 /** Site trend sort enums */
-export const SiteTrendSort = {
-  Change: 'CHANGE',
-  ChangeDesc: 'CHANGE_DESC',
-  Count: 'COUNT',
-  CountDesc: 'COUNT_DESC',
-  Date: 'DATE',
-  DateDesc: 'DATE_DESC',
-} as const
+export enum SiteTrendSort {
+  Change = 'CHANGE',
+  ChangeDesc = 'CHANGE_DESC',
+  Count = 'COUNT',
+  CountDesc = 'COUNT_DESC',
+  Date = 'DATE',
+  DateDesc = 'DATE_DESC',
+}
 
-export type SiteTrendSort = (typeof SiteTrendSort)[keyof typeof SiteTrendSort]
 /** Voice actors or production staff */
 export type Staff = {
   /** The person's age in years */
@@ -3546,30 +3521,29 @@ export type StaffImage = {
 }
 
 /** The primary language of the voice actor */
-export const StaffLanguage = {
+export enum StaffLanguage {
   /** English */
-  English: 'ENGLISH',
+  English = 'ENGLISH',
   /** French */
-  French: 'FRENCH',
+  French = 'FRENCH',
   /** German */
-  German: 'GERMAN',
+  German = 'GERMAN',
   /** Hebrew */
-  Hebrew: 'HEBREW',
+  Hebrew = 'HEBREW',
   /** Hungarian */
-  Hungarian: 'HUNGARIAN',
+  Hungarian = 'HUNGARIAN',
   /** Italian */
-  Italian: 'ITALIAN',
+  Italian = 'ITALIAN',
   /** Japanese */
-  Japanese: 'JAPANESE',
+  Japanese = 'JAPANESE',
   /** Korean */
-  Korean: 'KOREAN',
+  Korean = 'KOREAN',
   /** Portuguese */
-  Portuguese: 'PORTUGUESE',
+  Portuguese = 'PORTUGUESE',
   /** Spanish */
-  Spanish: 'SPANISH',
-} as const
+  Spanish = 'SPANISH',
+}
 
-export type StaffLanguage = (typeof StaffLanguage)[keyof typeof StaffLanguage]
 /** The names of the staff member */
 export type StaffName = {
   /** Other names the staff member might be referred to as (pen names) */
@@ -3613,21 +3587,20 @@ export type StaffRoleType = {
 }
 
 /** Staff sort enums */
-export const StaffSort = {
-  Favourites: 'FAVOURITES',
-  FavouritesDesc: 'FAVOURITES_DESC',
-  Id: 'ID',
-  IdDesc: 'ID_DESC',
-  Language: 'LANGUAGE',
-  LanguageDesc: 'LANGUAGE_DESC',
+export enum StaffSort {
+  Favourites = 'FAVOURITES',
+  FavouritesDesc = 'FAVOURITES_DESC',
+  Id = 'ID',
+  IdDesc = 'ID_DESC',
+  Language = 'LANGUAGE',
+  LanguageDesc = 'LANGUAGE_DESC',
   /** Order manually decided by moderators */
-  Relevance: 'RELEVANCE',
-  Role: 'ROLE',
-  RoleDesc: 'ROLE_DESC',
-  SearchMatch: 'SEARCH_MATCH',
-} as const
+  Relevance = 'RELEVANCE',
+  Role = 'ROLE',
+  RoleDesc = 'ROLE_DESC',
+  SearchMatch = 'SEARCH_MATCH',
+}
 
-export type StaffSort = (typeof StaffSort)[keyof typeof StaffSort]
 /** User's staff statistics */
 export type StaffStats = {
   amount?: Maybe<Scalars['Int']>
@@ -3713,17 +3686,16 @@ export type StudioEdge = {
 }
 
 /** Studio sort enums */
-export const StudioSort = {
-  Favourites: 'FAVOURITES',
-  FavouritesDesc: 'FAVOURITES_DESC',
-  Id: 'ID',
-  IdDesc: 'ID_DESC',
-  Name: 'NAME',
-  NameDesc: 'NAME_DESC',
-  SearchMatch: 'SEARCH_MATCH',
-} as const
+export enum StudioSort {
+  Favourites = 'FAVOURITES',
+  FavouritesDesc = 'FAVOURITES_DESC',
+  Id = 'ID',
+  IdDesc = 'ID_DESC',
+  Name = 'NAME',
+  NameDesc = 'NAME_DESC',
+  SearchMatch = 'SEARCH_MATCH',
+}
 
-export type StudioSort = (typeof StudioSort)[keyof typeof StudioSort]
 /** User's studio statistics */
 export type StudioStats = {
   amount?: Maybe<Scalars['Int']>
@@ -3734,21 +3706,19 @@ export type StudioStats = {
 }
 
 /** Submission sort enums */
-export const SubmissionSort = {
-  Id: 'ID',
-  IdDesc: 'ID_DESC',
-} as const
+export enum SubmissionSort {
+  Id = 'ID',
+  IdDesc = 'ID_DESC',
+}
 
-export type SubmissionSort = (typeof SubmissionSort)[keyof typeof SubmissionSort]
 /** Submission status */
-export const SubmissionStatus = {
-  Accepted: 'ACCEPTED',
-  PartiallyAccepted: 'PARTIALLY_ACCEPTED',
-  Pending: 'PENDING',
-  Rejected: 'REJECTED',
-} as const
+export enum SubmissionStatus {
+  Accepted = 'ACCEPTED',
+  PartiallyAccepted = 'PARTIALLY_ACCEPTED',
+  Pending = 'PENDING',
+  Rejected = 'REJECTED',
+}
 
-export type SubmissionStatus = (typeof SubmissionStatus)[keyof typeof SubmissionStatus]
 /** User's tag statistics */
 export type TagStats = {
   amount?: Maybe<Scalars['Int']>
@@ -3962,12 +3932,11 @@ export type ThreadCommentReplyNotification = {
 }
 
 /** Thread comments sort enums */
-export const ThreadCommentSort = {
-  Id: 'ID',
-  IdDesc: 'ID_DESC',
-} as const
+export enum ThreadCommentSort {
+  Id = 'ID',
+  IdDesc = 'ID_DESC',
+}
 
-export type ThreadCommentSort = (typeof ThreadCommentSort)[keyof typeof ThreadCommentSort]
 /** Notification for when a user replies to a subscribed forum thread */
 export type ThreadCommentSubscribedNotification = {
   /** The reply thread comment */
@@ -4013,26 +3982,25 @@ export type ThreadLikeNotification = {
 }
 
 /** Thread sort enums */
-export const ThreadSort = {
-  CreatedAt: 'CREATED_AT',
-  CreatedAtDesc: 'CREATED_AT_DESC',
-  Id: 'ID',
-  IdDesc: 'ID_DESC',
-  IsSticky: 'IS_STICKY',
-  RepliedAt: 'REPLIED_AT',
-  RepliedAtDesc: 'REPLIED_AT_DESC',
-  ReplyCount: 'REPLY_COUNT',
-  ReplyCountDesc: 'REPLY_COUNT_DESC',
-  SearchMatch: 'SEARCH_MATCH',
-  Title: 'TITLE',
-  TitleDesc: 'TITLE_DESC',
-  UpdatedAt: 'UPDATED_AT',
-  UpdatedAtDesc: 'UPDATED_AT_DESC',
-  ViewCount: 'VIEW_COUNT',
-  ViewCountDesc: 'VIEW_COUNT_DESC',
-} as const
+export enum ThreadSort {
+  CreatedAt = 'CREATED_AT',
+  CreatedAtDesc = 'CREATED_AT_DESC',
+  Id = 'ID',
+  IdDesc = 'ID_DESC',
+  IsSticky = 'IS_STICKY',
+  RepliedAt = 'REPLIED_AT',
+  RepliedAtDesc = 'REPLIED_AT_DESC',
+  ReplyCount = 'REPLY_COUNT',
+  ReplyCountDesc = 'REPLY_COUNT_DESC',
+  SearchMatch = 'SEARCH_MATCH',
+  Title = 'TITLE',
+  TitleDesc = 'TITLE_DESC',
+  UpdatedAt = 'UPDATED_AT',
+  UpdatedAtDesc = 'UPDATED_AT_DESC',
+  ViewCount = 'VIEW_COUNT',
+  ViewCountDesc = 'VIEW_COUNT_DESC',
+}
 
-export type ThreadSort = (typeof ThreadSort)[keyof typeof ThreadSort]
 /** A user */
 export type User = {
   /** The bio written by user (Markdown) */
@@ -4215,30 +4183,28 @@ export type UserScoreStatistic = {
 }
 
 /** User sort enums */
-export const UserSort = {
-  ChaptersRead: 'CHAPTERS_READ',
-  ChaptersReadDesc: 'CHAPTERS_READ_DESC',
-  Id: 'ID',
-  IdDesc: 'ID_DESC',
-  SearchMatch: 'SEARCH_MATCH',
-  Username: 'USERNAME',
-  UsernameDesc: 'USERNAME_DESC',
-  WatchedTime: 'WATCHED_TIME',
-  WatchedTimeDesc: 'WATCHED_TIME_DESC',
-} as const
+export enum UserSort {
+  ChaptersRead = 'CHAPTERS_READ',
+  ChaptersReadDesc = 'CHAPTERS_READ_DESC',
+  Id = 'ID',
+  IdDesc = 'ID_DESC',
+  SearchMatch = 'SEARCH_MATCH',
+  Username = 'USERNAME',
+  UsernameDesc = 'USERNAME_DESC',
+  WatchedTime = 'WATCHED_TIME',
+  WatchedTimeDesc = 'WATCHED_TIME_DESC',
+}
 
-export type UserSort = (typeof UserSort)[keyof typeof UserSort]
 /** The language the user wants to see staff and character names in */
-export const UserStaffNameLanguage = {
+export enum UserStaffNameLanguage {
   /** The staff or character's name in their native language */
-  Native: 'NATIVE',
+  Native = 'NATIVE',
   /** The romanization of the staff or character's native name */
-  Romaji: 'ROMAJI',
+  Romaji = 'ROMAJI',
   /** The romanization of the staff or character's native name, with western name ordering */
-  RomajiWestern: 'ROMAJI_WESTERN',
-} as const
+  RomajiWestern = 'ROMAJI_WESTERN',
+}
 
-export type UserStaffNameLanguage = (typeof UserStaffNameLanguage)[keyof typeof UserStaffNameLanguage]
 export type UserStaffStatistic = {
   chaptersRead: Scalars['Int']
   count: Scalars['Int']
@@ -4345,18 +4311,17 @@ export type UserStatisticsVoiceActorsArgs = {
 }
 
 /** User statistics sort enum */
-export const UserStatisticsSort = {
-  Count: 'COUNT',
-  CountDesc: 'COUNT_DESC',
-  Id: 'ID',
-  IdDesc: 'ID_DESC',
-  MeanScore: 'MEAN_SCORE',
-  MeanScoreDesc: 'MEAN_SCORE_DESC',
-  Progress: 'PROGRESS',
-  ProgressDesc: 'PROGRESS_DESC',
-} as const
+export enum UserStatisticsSort {
+  Count = 'COUNT',
+  CountDesc = 'COUNT_DESC',
+  Id = 'ID',
+  IdDesc = 'ID_DESC',
+  MeanScore = 'MEAN_SCORE',
+  MeanScoreDesc = 'MEAN_SCORE_DESC',
+  Progress = 'PROGRESS',
+  ProgressDesc = 'PROGRESS_DESC',
+}
 
-export type UserStatisticsSort = (typeof UserStatisticsSort)[keyof typeof UserStatisticsSort]
 /** A user's statistics */
 export type UserStats = {
   activityHistory?: Maybe<Array<Maybe<UserActivityHistory>>>
@@ -4408,22 +4373,21 @@ export type UserTagStatistic = {
 }
 
 /** The language the user wants to see media titles in */
-export const UserTitleLanguage = {
+export enum UserTitleLanguage {
   /** The official english title */
-  English: 'ENGLISH',
+  English = 'ENGLISH',
   /** The official english title, stylised by media creator */
-  EnglishStylised: 'ENGLISH_STYLISED',
+  EnglishStylised = 'ENGLISH_STYLISED',
   /** Official title in it's native language */
-  Native: 'NATIVE',
+  Native = 'NATIVE',
   /** Official title in it's native language, stylised by media creator */
-  NativeStylised: 'NATIVE_STYLISED',
+  NativeStylised = 'NATIVE_STYLISED',
   /** The romanization of the native language title */
-  Romaji: 'ROMAJI',
+  Romaji = 'ROMAJI',
   /** The romanization of the native language title, stylised by media creator */
-  RomajiStylised: 'ROMAJI_STYLISED',
-} as const
+  RomajiStylised = 'ROMAJI_STYLISED',
+}
 
-export type UserTitleLanguage = (typeof UserTitleLanguage)[keyof typeof UserTitleLanguage]
 export type UserVoiceActorStatistic = {
   chaptersRead: Scalars['Int']
   characterIds: Array<Maybe<Scalars['Int']>>
@@ -4440,3 +4404,774 @@ export type YearStats = {
   meanScore?: Maybe<Scalars['Int']>
   year?: Maybe<Scalars['Int']>
 }
+
+export type SearchMediaQueryVariables = Exact<{
+  page: Scalars['Int']
+  sort?: InputMaybe<Array<InputMaybe<MediaSort>> | InputMaybe<MediaSort>>
+  season?: InputMaybe<MediaSeason>
+  seasonYear?: InputMaybe<Scalars['Int']>
+  mediaType?: InputMaybe<MediaType>
+  isAdult?: InputMaybe<Scalars['Boolean']>
+  isOnList?: InputMaybe<Scalars['Boolean']>
+  countryOfOrigin?: InputMaybe<Scalars['CountryCode']>
+  search?: InputMaybe<Scalars['String']>
+  startDate?: InputMaybe<Scalars['FuzzyDateInt']>
+  startDateGreater?: InputMaybe<Scalars['FuzzyDateInt']>
+  startDateLesser?: InputMaybe<Scalars['FuzzyDateInt']>
+  endDate?: InputMaybe<Scalars['FuzzyDateInt']>
+  endDateGreater?: InputMaybe<Scalars['FuzzyDateInt']>
+  endDateLesser?: InputMaybe<Scalars['FuzzyDateInt']>
+  format?: InputMaybe<MediaFormat>
+  formatNot?: InputMaybe<MediaFormat>
+  formatIn?: InputMaybe<Array<InputMaybe<MediaFormat>> | InputMaybe<MediaFormat>>
+  formatNotIn?: InputMaybe<Array<InputMaybe<MediaFormat>> | InputMaybe<MediaFormat>>
+  status?: InputMaybe<MediaStatus>
+  statusNot?: InputMaybe<MediaStatus>
+  statusIn?: InputMaybe<Array<InputMaybe<MediaStatus>> | InputMaybe<MediaStatus>>
+  statusNotIn?: InputMaybe<Array<InputMaybe<MediaStatus>> | InputMaybe<MediaStatus>>
+  episodes?: InputMaybe<Scalars['Int']>
+  episodesGreater?: InputMaybe<Scalars['Int']>
+  episodesLesser?: InputMaybe<Scalars['Int']>
+  duration?: InputMaybe<Scalars['Int']>
+  durationGreater?: InputMaybe<Scalars['Int']>
+  durationLesser?: InputMaybe<Scalars['Int']>
+  chapters?: InputMaybe<Scalars['Int']>
+  chaptersGreater?: InputMaybe<Scalars['Int']>
+  chaptersLesser?: InputMaybe<Scalars['Int']>
+  volumes?: InputMaybe<Scalars['Int']>
+  volumesGreater?: InputMaybe<Scalars['Int']>
+  volumesLesser?: InputMaybe<Scalars['Int']>
+  genre?: InputMaybe<Scalars['String']>
+  genreIn?: InputMaybe<Array<InputMaybe<Scalars['String']>> | InputMaybe<Scalars['String']>>
+  genreNotIn?: InputMaybe<Array<InputMaybe<Scalars['String']>> | InputMaybe<Scalars['String']>>
+  tag?: InputMaybe<Scalars['String']>
+  tagIn?: InputMaybe<Array<InputMaybe<Scalars['String']>> | InputMaybe<Scalars['String']>>
+  tagNotIn?: InputMaybe<Array<InputMaybe<Scalars['String']>> | InputMaybe<Scalars['String']>>
+  minimumTagRank?: InputMaybe<Scalars['Int']>
+  tagCategory?: InputMaybe<Scalars['String']>
+  tagCategoryIn?: InputMaybe<Array<InputMaybe<Scalars['String']>> | InputMaybe<Scalars['String']>>
+  tagCategoryNotIn?: InputMaybe<Array<InputMaybe<Scalars['String']>> | InputMaybe<Scalars['String']>>
+  licensedBy?: InputMaybe<Scalars['String']>
+  licensedByIn?: InputMaybe<Array<InputMaybe<Scalars['String']>> | InputMaybe<Scalars['String']>>
+  isLicensed?: InputMaybe<Scalars['Boolean']>
+  averageScore?: InputMaybe<Scalars['Int']>
+  averageScoreNot?: InputMaybe<Scalars['Int']>
+  averageScoreGreater?: InputMaybe<Scalars['Int']>
+  averageScoreLesser?: InputMaybe<Scalars['Int']>
+  popularity?: InputMaybe<Scalars['Int']>
+  popularityNot?: InputMaybe<Scalars['Int']>
+  popularityGreater?: InputMaybe<Scalars['Int']>
+  popularityLesser?: InputMaybe<Scalars['Int']>
+  source?: InputMaybe<MediaSource>
+  sourceIn?: InputMaybe<Array<InputMaybe<MediaSource>> | InputMaybe<MediaSource>>
+}>
+
+export type SearchMediaQuery = {
+  Page?: {
+    pageInfo?: { total?: number | null; lastPage?: number | null; hasNextPage?: boolean | null } | null
+    media?: Array<{
+      id: number
+      siteUrl?: string | null
+      title?: { userPreferred?: string | null; native?: string | null; english?: string | null } | null
+      coverImage?: { extraLarge?: string | null; color?: string | null } | null
+    } | null> | null
+  } | null
+}
+
+export type GetViewerQueryVariables = Exact<{ [key: string]: never }>
+
+export type GetViewerQuery = {
+  Viewer?: { name: string; siteUrl?: string | null; avatar?: { large?: string | null } | null } | null
+}
+
+export const SearchMediaDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'query',
+      name: { kind: 'Name', value: 'searchMedia' },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'page' } },
+          type: { kind: 'NonNullType', type: { kind: 'NamedType', name: { kind: 'Name', value: 'Int' } } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'sort' } },
+          type: { kind: 'ListType', type: { kind: 'NamedType', name: { kind: 'Name', value: 'MediaSort' } } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'season' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'MediaSeason' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'seasonYear' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Int' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'mediaType' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'MediaType' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'isAdult' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Boolean' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'isOnList' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Boolean' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'countryOfOrigin' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'CountryCode' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'search' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'String' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'startDate' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'FuzzyDateInt' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'startDateGreater' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'FuzzyDateInt' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'startDateLesser' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'FuzzyDateInt' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'endDate' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'FuzzyDateInt' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'endDateGreater' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'FuzzyDateInt' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'endDateLesser' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'FuzzyDateInt' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'format' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'MediaFormat' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'formatNot' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'MediaFormat' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'formatIn' } },
+          type: { kind: 'ListType', type: { kind: 'NamedType', name: { kind: 'Name', value: 'MediaFormat' } } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'formatNotIn' } },
+          type: { kind: 'ListType', type: { kind: 'NamedType', name: { kind: 'Name', value: 'MediaFormat' } } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'status' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'MediaStatus' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'statusNot' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'MediaStatus' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'statusIn' } },
+          type: { kind: 'ListType', type: { kind: 'NamedType', name: { kind: 'Name', value: 'MediaStatus' } } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'statusNotIn' } },
+          type: { kind: 'ListType', type: { kind: 'NamedType', name: { kind: 'Name', value: 'MediaStatus' } } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'episodes' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Int' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'episodesGreater' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Int' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'episodesLesser' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Int' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'duration' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Int' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'durationGreater' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Int' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'durationLesser' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Int' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'chapters' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Int' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'chaptersGreater' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Int' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'chaptersLesser' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Int' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'volumes' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Int' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'volumesGreater' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Int' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'volumesLesser' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Int' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'genre' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'String' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'genreIn' } },
+          type: { kind: 'ListType', type: { kind: 'NamedType', name: { kind: 'Name', value: 'String' } } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'genreNotIn' } },
+          type: { kind: 'ListType', type: { kind: 'NamedType', name: { kind: 'Name', value: 'String' } } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'tag' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'String' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'tagIn' } },
+          type: { kind: 'ListType', type: { kind: 'NamedType', name: { kind: 'Name', value: 'String' } } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'tagNotIn' } },
+          type: { kind: 'ListType', type: { kind: 'NamedType', name: { kind: 'Name', value: 'String' } } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'minimumTagRank' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Int' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'tagCategory' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'String' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'tagCategoryIn' } },
+          type: { kind: 'ListType', type: { kind: 'NamedType', name: { kind: 'Name', value: 'String' } } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'tagCategoryNotIn' } },
+          type: { kind: 'ListType', type: { kind: 'NamedType', name: { kind: 'Name', value: 'String' } } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'licensedBy' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'String' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'licensedByIn' } },
+          type: { kind: 'ListType', type: { kind: 'NamedType', name: { kind: 'Name', value: 'String' } } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'isLicensed' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Boolean' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'averageScore' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Int' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'averageScoreNot' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Int' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'averageScoreGreater' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Int' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'averageScoreLesser' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Int' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'popularity' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Int' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'popularityNot' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Int' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'popularityGreater' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Int' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'popularityLesser' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Int' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'source' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'MediaSource' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'sourceIn' } },
+          type: { kind: 'ListType', type: { kind: 'NamedType', name: { kind: 'Name', value: 'MediaSource' } } },
+        },
+      ],
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'Page' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'page' },
+                value: { kind: 'Variable', name: { kind: 'Name', value: 'page' } },
+              },
+              { kind: 'Argument', name: { kind: 'Name', value: 'perPage' }, value: { kind: 'IntValue', value: '50' } },
+            ],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                {
+                  kind: 'Field',
+                  name: { kind: 'Name', value: 'pageInfo' },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      { kind: 'Field', name: { kind: 'Name', value: 'total' } },
+                      { kind: 'Field', name: { kind: 'Name', value: 'lastPage' } },
+                      { kind: 'Field', name: { kind: 'Name', value: 'hasNextPage' } },
+                    ],
+                  },
+                },
+                {
+                  kind: 'Field',
+                  name: { kind: 'Name', value: 'media' },
+                  arguments: [
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'sort' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'sort' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'season' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'season' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'seasonYear' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'seasonYear' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'type' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'mediaType' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'isAdult' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'isAdult' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'onList' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'isOnList' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'countryOfOrigin' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'countryOfOrigin' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'search' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'search' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'startDate' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'startDate' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'startDate_greater' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'startDateGreater' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'startDate_lesser' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'startDateLesser' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'endDate' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'endDate' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'endDate_greater' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'endDateGreater' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'endDate_lesser' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'endDateLesser' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'format' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'format' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'format_not' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'formatNot' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'format_in' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'formatIn' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'format_not_in' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'formatNotIn' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'status' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'status' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'status_not' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'statusNot' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'status_in' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'statusIn' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'status_not_in' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'statusNotIn' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'episodes' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'episodes' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'episodes_greater' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'episodesGreater' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'episodes_lesser' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'episodesLesser' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'duration' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'duration' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'duration_greater' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'durationGreater' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'duration_lesser' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'durationLesser' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'chapters' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'chapters' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'chapters_greater' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'chaptersGreater' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'chapters_lesser' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'chaptersLesser' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'volumes' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'volumes' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'volumes_greater' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'volumesGreater' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'volumes_lesser' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'volumesLesser' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'genre' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'genre' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'genre_in' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'genreIn' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'genre_not_in' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'genreNotIn' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'tag' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'tag' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'tag_in' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'tagIn' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'tag_not_in' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'tagNotIn' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'minimumTagRank' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'minimumTagRank' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'tagCategory' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'tagCategory' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'tagCategory_in' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'tagCategoryIn' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'tagCategory_not_in' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'tagCategoryNotIn' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'licensedBy' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'licensedBy' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'licensedBy_in' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'licensedByIn' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'isLicensed' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'isLicensed' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'averageScore' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'averageScore' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'averageScore_not' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'averageScoreNot' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'averageScore_greater' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'averageScoreGreater' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'averageScore_lesser' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'averageScoreLesser' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'popularity' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'popularity' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'popularity_not' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'popularityNot' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'popularity_greater' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'popularityGreater' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'popularity_lesser' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'popularityLesser' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'source' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'source' } },
+                    },
+                    {
+                      kind: 'Argument',
+                      name: { kind: 'Name', value: 'source_in' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'sourceIn' } },
+                    },
+                  ],
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+                      { kind: 'Field', name: { kind: 'Name', value: 'siteUrl' } },
+                      {
+                        kind: 'Field',
+                        name: { kind: 'Name', value: 'title' },
+                        selectionSet: {
+                          kind: 'SelectionSet',
+                          selections: [
+                            { kind: 'Field', name: { kind: 'Name', value: 'userPreferred' } },
+                            { kind: 'Field', name: { kind: 'Name', value: 'native' } },
+                            { kind: 'Field', name: { kind: 'Name', value: 'english' } },
+                          ],
+                        },
+                      },
+                      {
+                        kind: 'Field',
+                        name: { kind: 'Name', value: 'coverImage' },
+                        selectionSet: {
+                          kind: 'SelectionSet',
+                          selections: [
+                            { kind: 'Field', name: { kind: 'Name', value: 'extraLarge' } },
+                            { kind: 'Field', name: { kind: 'Name', value: 'color' } },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<SearchMediaQuery, SearchMediaQueryVariables>
+export const GetViewerDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'query',
+      name: { kind: 'Name', value: 'getViewer' },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'Viewer' },
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'name' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'siteUrl' } },
+                {
+                  kind: 'Field',
+                  name: { kind: 'Name', value: 'avatar' },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [{ kind: 'Field', name: { kind: 'Name', value: 'large' } }],
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<GetViewerQuery, GetViewerQueryVariables>
