@@ -17,7 +17,8 @@
     "jsx": "react-jsx",
     "useUnknownInCatchVariables": true,
     "strictNullChecks": true,
-    "noUncheckedIndexedAccess": true
+    "noUncheckedIndexedAccess": true,
+    "importsNotUsedAsValues": "error"
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
