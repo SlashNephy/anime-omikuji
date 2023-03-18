@@ -187,7 +187,8 @@ export const serializeFilters = (payload: unknown): string => {
     const json = JSON.stringify(newValue)
     console.log(`serializeFilters: ${json}`)
 
-    return compressToEncodedURIComponent(json)
+    // trim brackets
+    return compressToEncodedURIComponent(json.replace(/(^\{|}$)/g, ''))
   } catch (e: unknown) {
     console.error(e)
     return ''
@@ -199,7 +200,8 @@ export const deserializeFilters = (payload: string): unknown => {
     const json = decompressFromEncodedURIComponent(payload)
 
     return {
-      [filtersKey]: JSON.parse(json),
+      // pretend/append brackets
+      [filtersKey]: JSON.parse(`{${json}}`),
     }
   } catch (e: unknown) {
     console.error(e)
