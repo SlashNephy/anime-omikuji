@@ -2,7 +2,7 @@ import { Dropdown } from '@nextui-org/react'
 import { IconFlower, IconPumpkinScary, IconSailboat, IconSnowflake } from '@tabler/icons-react'
 import { isNonEmpty } from 'ts-array-length'
 
-import { filtersSelector, useSingleDropdownState } from '../lib/atom'
+import { filtersSelector, useSingleDropdownState } from '../lib/recoil'
 
 import type { MediaSeason } from '../graphql/generated/graphql'
 

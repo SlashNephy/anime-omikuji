@@ -1,6 +1,6 @@
 import { Dropdown } from '@nextui-org/react'
 
-import { filtersSelector, useSingleDropdownState } from '../lib/atom'
+import { filtersSelector, useSingleDropdownState } from '../lib/recoil'
 
 type DropdownItem = {
   // eslint-disable-next-line react/no-unused-prop-types

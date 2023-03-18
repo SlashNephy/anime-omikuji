@@ -1,6 +1,6 @@
 import { Dropdown } from '@nextui-org/react'
 
-import { filtersSelector, useMultipleDropdownState } from '../lib/atom'
+import { filtersSelector, useMultipleDropdownState } from '../lib/recoil'
 
 export type MediaGenre =
   | 'Action'

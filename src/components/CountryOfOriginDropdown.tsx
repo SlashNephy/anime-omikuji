@@ -3,7 +3,7 @@ import { JP } from 'country-flag-icons/react/1x1'
 import { CN, KR, TW } from 'country-flag-icons/react/3x2'
 import { isNonEmpty } from 'ts-array-length'
 
-import { filtersSelector, useSingleDropdownState } from '../lib/atom'
+import { filtersSelector, useSingleDropdownState } from '../lib/recoil'
 
 export type CountryCode = 'JP' | 'KR' | 'CN' | 'TW'
 

@@ -2,7 +2,7 @@ import { Checkbox } from '@nextui-org/react'
 import { useState } from 'react'
 import { useSetRecoilState } from 'recoil'
 
-import { filtersSelector } from '../lib/atom'
+import { filtersSelector } from '../lib/recoil'
 
 export function OnListCheckbox(): JSX.Element {
   const setValue = useSetRecoilState(filtersSelector('isOnList'))

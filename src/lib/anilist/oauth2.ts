@@ -1,7 +1,7 @@
 import secondsToMilliseconds from 'date-fns/secondsToMilliseconds'
 import { useEffect, useMemo } from 'react'
 
-import { useLocalStorageObject } from './useLocalStorageValue'
+import { useLocalStorageObject } from '../useLocalStorageValue'
 
 export type BearerToken = {
   accessToken: string
