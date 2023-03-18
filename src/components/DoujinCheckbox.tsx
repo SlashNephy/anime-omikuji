@@ -1,12 +1,10 @@
 import { Checkbox } from '@nextui-org/react'
-import { useState } from 'react'
 import { useRecoilState } from 'recoil'
 
 import { filtersSelector } from '../lib/recoil'
 
 export function DoujinCheckbox(): JSX.Element {
   const [isLicensed, setIsLicensed] = useRecoilState(filtersSelector('isLicensed'))
-  const [isSelected, setIsSelected] = useState(isLicensed ? !isLicensed : false)
 
   // FIXME: isSelected is not a valid property of the Checkbox component
   // Warning: React does not recognize the `isSelected` prop on a DOM element.
@@ -14,9 +12,9 @@ export function DoujinCheckbox(): JSX.Element {
   // If you accidentally passed it from a parent component, remove it from the DOM element.
   return (
     <Checkbox
-      isSelected={isLicensed}
-      onChange={(isSelected) => {
-        setIsLicensed(isSelected ? undefined : false)
+      isSelected={isLicensed === false}
+      onChange={(isChecked) => {
+        setIsLicensed(isChecked ? false : undefined)
       }}
     >
       Doujin
