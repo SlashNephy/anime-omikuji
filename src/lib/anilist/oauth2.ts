@@ -1,7 +1,8 @@
 import secondsToMilliseconds from 'date-fns/secondsToMilliseconds'
 import { useEffect, useMemo } from 'react'
 
-import { useLocalStorageObject } from '../useLocalStorageValue'
+import { useLocalStorageObject } from '../hooks/useLocalStorageObject'
+import { useLocalStorageString } from '../hooks/useLocalStorageString'
 
 export type BearerToken = {
   accessToken: string
@@ -30,6 +31,18 @@ export const useAniListToken = (): BearerToken | null => {
       tokenType,
     }
   })
+
+  // keep search params in localStorage for pre-login
+  const [search, setSearch] = useLocalStorageString('anilist-filters')
+  useEffect(() => {
+    if (token === null && window.location.search !== '') {
+      setSearch(window.location.search)
+    }
+    if (token !== null && search !== null && window.location.search === '') {
+      window.location.search = search
+      setSearch(null)
+    }
+  }, [token, search, setSearch])
 
   // check expiration
   useEffect(() => {
