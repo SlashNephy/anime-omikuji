@@ -9,8 +9,6 @@ import { RecoilURLSync } from 'recoil-sync'
 import { App } from './App'
 import { deserializeFilters, serializeFilters } from './lib/recoil'
 
-import type { Filters } from './lib/recoil'
-
 const lightTheme = createTheme({
   type: 'light',
 })
@@ -40,7 +38,7 @@ if (container !== null) {
               <RecoilURLSync
                 deserialize={deserializeFilters}
                 location={{ part: 'search' }}
-                serialize={(value: unknown) => serializeFilters(value as Filters)}
+                serialize={serializeFilters}
               >
                 <App />
               </RecoilURLSync>

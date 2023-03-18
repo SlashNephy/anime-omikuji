@@ -78,8 +78,9 @@ const defaultFilters: Filters = {
   countryOfOrigin: 'JP',
 }
 
+const filtersKey = 'filters'
 const filters = atom<Filters>({
-  key: 'filters',
+  key: filtersKey,
   default: defaultFilters,
   effects: [
     urlSyncEffect({
@@ -88,9 +89,9 @@ const filters = atom<Filters>({
       syncDefault: false,
       write({ write, reset }, newValue) {
         if (newValue instanceof DefaultValue) {
-          reset('filters')
+          reset(filtersKey)
         } else {
-          write('filters', newValue)
+          write(filtersKey, newValue)
         }
       },
     }),
@@ -155,23 +156,53 @@ export const useMultipleDropdownState = <T>(state: RecoilState<T[] | undefined>)
   return [values !== undefined ? values : [], setSelection]
 }
 
-export const serializeFilters = (value: Filters): string => {
+export const serializeFilters = (payload: unknown): string => {
+  const value = (payload as { [filtersKey]?: Filters })[filtersKey]
+  if (value === undefined) {
+    return ''
+  }
+
+  const newValue: Record<string, unknown> = { ...value }
+  for (const [k, v] of Object.entries(value)) {
+    // trim empty array
+    if (Array.isArray(v) && v.length === 0) {
+      // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
+      delete newValue[k]
+    }
+
+    // trim empty string
+    if (typeof v === 'string' && v.length === 0) {
+      // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
+      delete newValue[k]
+    }
+
+    // trim default boolean
+    if (typeof v === 'boolean' && v === defaultFilters[k as keyof Filters]) {
+      // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
+      delete newValue[k]
+    }
+  }
+
   try {
-    const json = JSON.stringify(value)
+    const json = JSON.stringify(newValue)
     console.log(`serializeFilters: ${json}`)
 
     return compressToEncodedURIComponent(json)
   } catch (e: unknown) {
+    console.error(e)
     return ''
   }
 }
 
-export const deserializeFilters = (value: string): Filters => {
+export const deserializeFilters = (payload: string): unknown => {
   try {
-    const json = decompressFromEncodedURIComponent(value)
+    const json = decompressFromEncodedURIComponent(payload)
 
-    return JSON.parse(json)
+    return {
+      [filtersKey]: JSON.parse(json),
+    }
   } catch (e: unknown) {
+    console.error(e)
     return defaultFilters
   }
 }
