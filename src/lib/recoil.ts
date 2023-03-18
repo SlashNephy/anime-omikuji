@@ -183,6 +183,10 @@ export const serializeFilters = (payload: unknown): string => {
     }
   }
 
+  if (Object.keys(newValue).length === 0) {
+    return ''
+  }
+
   try {
     const json = JSON.stringify(newValue)
     console.log(`serializeFilters: ${json}`)
