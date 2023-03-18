@@ -85,7 +85,7 @@ const filters = atom<Filters>({
     urlSyncEffect({
       refine: custom((x) => x as Filters),
       history: 'replace',
-      syncDefault: true,
+      syncDefault: false,
       write({ write, reset }, newValue) {
         if (newValue instanceof DefaultValue) {
           reset('filters')
