@@ -8,6 +8,7 @@ export function FreeWordInput(): JSX.Element {
 
   return (
     <Input
+      bordered
       clearable
       label="Search"
       labelPlaceholder="Search..."
