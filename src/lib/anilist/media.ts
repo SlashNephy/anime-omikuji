@@ -28,27 +28,33 @@ export const useAniListMedia = (
   return [data, isFetching, refetch]
 }
 
+const maxPage = 5
+
 const fetchMedia = async (client: GraphQLClient, query: Omit<SearchMediaQueryVariables, 'page'>): Promise<Media[]> => {
   const results = [] as Media[]
   let lastPage = 1
 
-  // TODO: 並列化
-  while (lastPage < 5) {
+  while (lastPage < maxPage) {
     console.log(`fetchMedia: fetching page ${lastPage}`)
 
-    // eslint-disable-next-line no-await-in-loop
-    const { media, isLast } = await fetchMediaWithPage(client, query, lastPage)
-    if (media.length > 0) {
-      results.push(...media)
-      console.log(`fetchMedia: fetched ${media.length} media`)
-    }
+    try {
+      // eslint-disable-next-line no-await-in-loop
+      const { media, isLast } = await fetchMediaWithPage(client, query, lastPage)
+      if (media.length > 0) {
+        results.push(...media)
+        console.log(`fetchMedia: fetched ${media.length} media`)
+      }
 
-    if (isLast) {
-      console.log(`fetchMedia: page ended ${lastPage}`)
+      if (isLast) {
+        console.log(`fetchMedia: page ended ${lastPage}`)
+        break
+      }
+
+      lastPage++
+    } catch (e: unknown) {
+      console.error(e)
       break
     }
-
-    lastPage++
   }
 
   return results
