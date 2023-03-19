@@ -13,7 +13,7 @@ export const useAniListMedia = (
   client: GraphQLClient,
   query: Omit<SearchMediaQueryVariables, 'page' | 'sort'>
 ): [Media[] | undefined, boolean, () => Promise<QueryObserverResult<Media[]>>] => {
-  const { data, isRefetching, refetch } = useQuery(
+  const { data, isFetching, refetch } = useQuery(
     ['media'],
     async () => {
       const sort = randomChoose(Object.values(MediaSort))
@@ -25,7 +25,7 @@ export const useAniListMedia = (
     }
   )
 
-  return [data, isRefetching, refetch]
+  return [data, isFetching, refetch]
 }
 
 const fetchMedia = async (client: GraphQLClient, query: Omit<SearchMediaQueryVariables, 'page'>): Promise<Media[]> => {
