@@ -11,6 +11,7 @@ export const useAniListClient = (token: BearerToken): GraphQLClient =>
         headers: {
           authorization: `${token.tokenType} ${token.accessToken}`,
         },
+        timeout: 5000,
       }),
     [token]
   )
