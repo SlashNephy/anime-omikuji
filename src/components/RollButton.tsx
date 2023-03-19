@@ -13,7 +13,7 @@ const dices = [
   <IconDice6 key="6" />,
 ]
 
-export function RollButton({ onPress, isProgressing }: { onPress(): void; isProgressing: boolean }): JSX.Element {
+export function RollButton({ onPress, isProgressing }: { isProgressing: boolean; onPress(): void }): JSX.Element {
   const [icon, setIcon] = useState(<IconDice3 />)
 
   return (

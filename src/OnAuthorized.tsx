@@ -1,5 +1,5 @@
 import { Button, Card, Link, Loading, Row, Spacer, Text, User } from '@nextui-org/react'
-import { IconClover } from '@tabler/icons-react'
+import { IconClover, IconMoodSadSquint } from '@tabler/icons-react'
 import fontColorContrast from 'font-color-contrast'
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useRecoilValue } from 'recoil'
@@ -135,19 +135,49 @@ export function OnAuthorized({ token }: { token: BearerToken }): JSX.Element {
       {media === undefined ? (
         <></>
       ) : isMediaLoading ? (
-        <Loading />
+        <Row align="center" justify="center">
+          <Card css={{ mw: '300px' }}>
+            <Card.Body>
+              <Row align="center" justify="center">
+                <Text>Fetching Data...</Text>
+              </Row>
+              <Spacer y={1} />
+              {/* TODO */}
+              {/* <Progress shadow striped color="success" /> */}
+              <Loading />
+            </Card.Body>
+          </Card>
+        </Row>
       ) : media.length === 0 ? (
-        <Text>No media were found that meet your filters...</Text>
+        <Row align="center" justify="center">
+          <Card css={{ mw: '400px' }}>
+            <Card.Body>
+              <Row align="center" justify="center">
+                <IconMoodSadSquint />
+              </Row>
+              <Spacer y={1} />
+              <Row align="center" justify="center">
+                <Text>No media were found that meet your filters...</Text>
+              </Row>
+            </Card.Body>
+          </Card>
+        </Row>
       ) : activeRollMode === 'slot' ? (
-        <MediaSlot
-          media={media}
-          onSelect={(selected) => {
-            setChosenMedia(selected)
-            setActiveRollMode(undefined)
-          }}
-        />
+        <Row align="center" justify="center">
+          <MediaSlot
+            media={media}
+            onSelect={(selected) => {
+              setChosenMedia(selected)
+              setActiveRollMode(undefined)
+            }}
+          />
+        </Row>
       ) : (
-        chosenMedia && <MediaCard media={chosenMedia} />
+        chosenMedia && (
+          <Row align="center" justify="center">
+            <MediaCard media={chosenMedia} />
+          </Row>
+        )
       )}
     </>
   )
@@ -200,40 +230,41 @@ function MediaSlot({ media, onSelect }: { media: Media[]; onSelect(selected: Med
 
 function MediaCard({ media, onClick }: { media: Media; onClick?(): void }): JSX.Element {
   return (
-    <Card isHoverable>
-      <Card.Body css={{ p: 0 }} onClick={onClick}>
-        {media.coverImage?.extraLarge && (
-          <Card.Image
-            alt={`${media.title?.native} / ${media.title?.english}`}
-            objectFit="cover"
-            src={media.coverImage.extraLarge}
-          />
-        )}
-      </Card.Body>
+    <Link href={media.siteUrl ?? undefined} target="_blank">
+      <Card isHoverable css={{ mw: '400px' }}>
+        <Card.Body css={{ p: 0 }} onClick={onClick}>
+          {media.coverImage?.extraLarge && (
+            <Card.Image
+              alt={`${media.title?.native} / ${media.title?.english}`}
+              objectFit="cover"
+              src={media.coverImage.extraLarge}
+            />
+          )}
+        </Card.Body>
 
-      <Card.Footer
-        isBlurred
-        css={{
-          // position: 'absolute',
-          bgBlur: media.coverImage?.color ?? '#ffffff66',
-          borderTop: '$borderWeights$light solid rgba(255, 255, 255, 0.2)',
-          // bottom: 0,
-          zIndex: 1,
-        }}
-      >
-        <Row align="center" justify="center">
-          {media.siteUrl && (
-            <Link href={media.siteUrl} target="_blank">
+        <Card.Footer
+          isBlurred
+          css={{
+            position: 'absolute',
+            bgBlur: media.coverImage?.color ? `${media.coverImage.color}66` : '#ffffff66',
+            borderTop: '$borderWeights$light solid rgba(255, 255, 255, 0.2)',
+            bottom: 0,
+            zIndex: 1,
+          }}
+        >
+          <Row align="center" justify="center">
+            <Link href={media.siteUrl ?? undefined} target="_blank">
               <Text
+                h4
                 color={fontColorContrast(media.coverImage?.color ?? '#ffffff')}
                 title={`${media.title?.native} / ${media.title?.english}`}
               >
-                {media.title?.userPreferred}
+                {media.title?.userPreferred ?? 'no title'}
               </Text>
             </Link>
-          )}
-        </Row>
-      </Card.Footer>
-    </Card>
+          </Row>
+        </Card.Footer>
+      </Card>
+    </Link>
   )
 }
