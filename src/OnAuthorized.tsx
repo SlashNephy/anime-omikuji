@@ -1,15 +1,17 @@
-import { Button, Card, Link, Loading, Row, Spacer, Text, User } from '@nextui-org/react'
-import { IconClover, IconMoodSadSquint } from '@tabler/icons-react'
-import fontColorContrast from 'font-color-contrast'
+import { Card, Link, Row, Spacer } from '@nextui-org/react'
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useRecoilValue } from 'recoil'
 
 import { AdultCheckbox } from './components/AdultCheckbox'
 import { CountryOfOriginDropdown } from './components/CountryOfOriginDropdown'
 import { DoujinCheckbox } from './components/DoujinCheckbox'
+import { FeelingLuckyButton } from './components/FeelingLuckyButton'
 import { FormatDropdown } from './components/FormatDropdown'
 import { FreeWordInput } from './components/FreeWordInput'
 import { GenreDropdown } from './components/GenreDropdown'
+import { MediaCard } from './components/MediaCard'
+import { MediaLoadingCard } from './components/MediaLoadingCard'
+import { MediaNotFoundCard } from './components/MediaNotFoundCard'
 import { MediaTypeDropdown } from './components/MediaTypeDropdown'
 import { OnListCheckbox } from './components/OnListCheckbox'
 import { RollButton } from './components/RollButton'
@@ -18,9 +20,10 @@ import { SeasonYearDropdown } from './components/SeasonYearDropdown'
 import { SourceMaterialDropdown } from './components/SourceMaterialDropdown'
 import { StatusDropdown } from './components/StatusDropdown'
 import { TagDropdown } from './components/TagDropdown'
+import { Title } from './components/Title'
+import { UserInfo } from './components/UserInfo'
 import { useAniListClient } from './lib/anilist/graphql'
 import { useAniListMedia } from './lib/anilist/media'
-import { useAniListVisitor } from './lib/anilist/visitor'
 import { randomChoose } from './lib/random'
 import { filtersQuerySelector } from './lib/recoil'
 
@@ -31,7 +34,6 @@ type RollMode = 'slot' | 'feeling_lucky'
 
 export function OnAuthorized({ token }: { token: BearerToken }): JSX.Element {
   const client = useAniListClient(token)
-  const [visitor, isVisitorLoading] = useAniListVisitor(client)
 
   const query = useRecoilValue(filtersQuerySelector)
   const [media, isMediaLoading, updateMedia] = useAniListMedia(client, query)
@@ -43,22 +45,13 @@ export function OnAuthorized({ token }: { token: BearerToken }): JSX.Element {
       <Card>
         <Card.Header>
           <Row align="center" justify="center">
-            <Text h1>Anime Omikuji</Text>
+            <Title />
           </Row>
         </Card.Header>
 
         <Card.Body>
           <Row align="center" justify="center">
-            {isVisitorLoading ? (
-              <Loading />
-            ) : (
-              <>
-                <Text>Logged in as</Text>
-                <Link href={visitor?.siteUrl ?? undefined} target="_blank">
-                  <User name={visitor?.name} src={visitor?.avatar?.large ?? undefined} />
-                </Link>
-              </>
-            )}
+            <UserInfo client={client} />
           </Row>
 
           <Spacer y={2} />
@@ -94,20 +87,18 @@ export function OnAuthorized({ token }: { token: BearerToken }): JSX.Element {
 
           <Row align="center" justify="center">
             <RollButton
-              isProgressing={activeRollMode === 'slot'}
+              isDisabled={activeRollMode !== undefined}
               onPress={() => {
+                setChosenMedia(undefined)
                 setActiveRollMode('slot')
                 updateMedia().catch(console.error)
               }}
             />
             <Spacer x={1} />
-            <Button
-              auto
-              ghost
-              color="success"
-              disabled={activeRollMode === 'feeling_lucky'}
-              icon={<IconClover />}
+            <FeelingLuckyButton
+              isDisabled={activeRollMode !== undefined}
               onPress={() => {
+                setChosenMedia(undefined)
                 setActiveRollMode('feeling_lucky')
                 updateMedia()
                   .then((results) => {
@@ -122,49 +113,26 @@ export function OnAuthorized({ token }: { token: BearerToken }): JSX.Element {
                     setActiveRollMode(undefined)
                   })
               }}
-            >
-              {/* eslint-disable-next-line quotes */}
-              {activeRollMode === 'feeling_lucky' ? <Loading color="white" size="sm" /> : "I'm Feeling Lucky"}
-            </Button>
+            />
           </Row>
         </Card.Body>
       </Card>
 
       <Spacer y={2} />
 
-      {media === undefined ? (
-        <></>
-      ) : isMediaLoading ? (
+      {isMediaLoading ? (
         <Row align="center" justify="center">
-          <Card css={{ mw: '300px' }}>
-            <Card.Body>
-              <Row align="center" justify="center">
-                <Text>Fetching Data...</Text>
-              </Row>
-              <Spacer y={1} />
-              {/* TODO */}
-              {/* <Progress shadow striped color="success" /> */}
-              <Loading />
-            </Card.Body>
-          </Card>
+          <MediaLoadingCard />
         </Row>
+      ) : media === undefined ? (
+        <></>
       ) : media.length === 0 ? (
         <Row align="center" justify="center">
-          <Card css={{ mw: '400px' }}>
-            <Card.Body>
-              <Row align="center" justify="center">
-                <IconMoodSadSquint />
-              </Row>
-              <Spacer y={1} />
-              <Row align="center" justify="center">
-                <Text>No media were found that meet your filters...</Text>
-              </Row>
-            </Card.Body>
-          </Card>
+          <MediaNotFoundCard />
         </Row>
       ) : activeRollMode === 'slot' ? (
         <Row align="center" justify="center">
-          <MediaSlot
+          <MediaCardSlot
             media={media}
             onSelect={(selected) => {
               setChosenMedia(selected)
@@ -175,7 +143,9 @@ export function OnAuthorized({ token }: { token: BearerToken }): JSX.Element {
       ) : (
         chosenMedia && (
           <Row align="center" justify="center">
-            <MediaCard media={chosenMedia} />
+            <Link href={chosenMedia.siteUrl ?? undefined} target="_blank">
+              <MediaCard media={chosenMedia} />
+            </Link>
           </Row>
         )
       )}
@@ -183,7 +153,7 @@ export function OnAuthorized({ token }: { token: BearerToken }): JSX.Element {
   )
 }
 
-function MediaSlot({ media, onSelect }: { media: Media[]; onSelect(selected: Media): void }): JSX.Element {
+function MediaCardSlot({ media, onSelect }: { media: Media[]; onSelect(selected: Media): void }): JSX.Element {
   const requestRef = useRef<number>()
   const [currentIndex, setCurrentIndex] = useState<number>()
   const currentMedia = useMemo(() => (currentIndex ? media[currentIndex] : undefined), [media, currentIndex])
@@ -225,46 +195,5 @@ function MediaSlot({ media, onSelect }: { media: Media[]; onSelect(selected: Med
         setIsAnimating((wasAnimating) => !wasAnimating)
       }}
     />
-  )
-}
-
-function MediaCard({ media, onClick }: { media: Media; onClick?(): void }): JSX.Element {
-  return (
-    <Link href={media.siteUrl ?? undefined} target="_blank">
-      <Card isHoverable css={{ mw: '400px' }}>
-        <Card.Body css={{ p: 0 }} onClick={onClick}>
-          {media.coverImage?.extraLarge && (
-            <Card.Image
-              alt={`${media.title?.native} / ${media.title?.english}`}
-              objectFit="cover"
-              src={media.coverImage.extraLarge}
-            />
-          )}
-        </Card.Body>
-
-        <Card.Footer
-          isBlurred
-          css={{
-            position: 'absolute',
-            bgBlur: media.coverImage?.color ? `${media.coverImage.color}66` : '#ffffff66',
-            borderTop: '$borderWeights$light solid rgba(255, 255, 255, 0.2)',
-            bottom: 0,
-            zIndex: 1,
-          }}
-        >
-          <Row align="center" justify="center">
-            <Link href={media.siteUrl ?? undefined} target="_blank">
-              <Text
-                h4
-                color={fontColorContrast(media.coverImage?.color ?? '#ffffff')}
-                title={`${media.title?.native} / ${media.title?.english}`}
-              >
-                {media.title?.userPreferred ?? 'no title'}
-              </Text>
-            </Link>
-          </Row>
-        </Card.Footer>
-      </Card>
-    </Link>
   )
 }

@@ -1,4 +1,4 @@
-import { Button, Loading } from '@nextui-org/react'
+import { Button } from '@nextui-org/react'
 import { IconDice1, IconDice2, IconDice3, IconDice4, IconDice5, IconDice6 } from '@tabler/icons-react'
 import React, { useState } from 'react'
 
@@ -13,7 +13,7 @@ const dices = [
   <IconDice6 key="6" />,
 ]
 
-export function RollButton({ onPress, isProgressing }: { isProgressing: boolean; onPress(): void }): JSX.Element {
+export function RollButton({ isDisabled, onPress }: { isDisabled: boolean; onPress(): void }): JSX.Element {
   const [icon, setIcon] = useState(<IconDice3 />)
 
   return (
@@ -21,14 +21,14 @@ export function RollButton({ onPress, isProgressing }: { isProgressing: boolean;
       auto
       ghost
       color="secondary"
-      disabled={isProgressing}
+      disabled={isDisabled}
       icon={icon}
       onPress={onPress}
       onMouseEnter={() => {
         setIcon(randomChoose(dices))
       }}
     >
-      {isProgressing ? <Loading color="white" size="sm" /> : 'Click to Roll'}
+      Click to Roll
     </Button>
   )
 }
