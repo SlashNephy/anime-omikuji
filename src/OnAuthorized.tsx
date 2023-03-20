@@ -1,5 +1,5 @@
 import { Card, Link, Row, Spacer } from '@nextui-org/react'
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import React, { useState } from 'react'
 import { useRecoilValue } from 'recoil'
 
 import { AdultCheckbox } from './components/AdultCheckbox'
@@ -10,6 +10,7 @@ import { FormatDropdown } from './components/FormatDropdown'
 import { FreeWordInput } from './components/FreeWordInput'
 import { GenreDropdown } from './components/GenreDropdown'
 import { MediaCard } from './components/MediaCard'
+import { MediaCardSlot } from './components/MediaCardSlot'
 import { MediaLoadingCard } from './components/MediaLoadingCard'
 import { MediaNotFoundCard } from './components/MediaNotFoundCard'
 import { MediaTypeDropdown } from './components/MediaTypeDropdown'
@@ -150,44 +151,5 @@ export function OnAuthorized({ token }: { token: BearerToken }): JSX.Element {
         )
       )}
     </>
-  )
-}
-
-function MediaCardSlot({ media, onSelect }: { media: Media[]; onSelect(selected: Media): void }): JSX.Element {
-  const requestRef = useRef<number>()
-  const [currentIndex, setCurrentIndex] = useState<number>()
-  const currentMedia = useMemo(() => (currentIndex ? media[currentIndex] : undefined), [media, currentIndex])
-
-  const animate = useCallback(() => {
-    if (media.length > 0) {
-      const index = Math.floor(Math.random() * media.length)
-      setCurrentIndex(index)
-    } else {
-      setCurrentIndex(undefined)
-    }
-
-    requestRef.current = requestAnimationFrame(animate)
-  }, [media])
-
-  useEffect(() => {
-    requestRef.current = requestAnimationFrame(animate)
-    return () => {
-      if (requestRef.current !== undefined) {
-        cancelAnimationFrame(requestRef.current)
-      }
-    }
-  }, [currentIndex, animate])
-
-  if (currentMedia === undefined) {
-    return <></>
-  }
-
-  return (
-    <MediaCard
-      media={currentMedia}
-      onClick={() => {
-        onSelect(currentMedia)
-      }}
-    />
   )
 }
