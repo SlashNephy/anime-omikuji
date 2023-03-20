@@ -157,7 +157,6 @@ function MediaCardSlot({ media, onSelect }: { media: Media[]; onSelect(selected:
   const requestRef = useRef<number>()
   const [currentIndex, setCurrentIndex] = useState<number>()
   const currentMedia = useMemo(() => (currentIndex ? media[currentIndex] : undefined), [media, currentIndex])
-  const [isAnimating, setIsAnimating] = useState(true)
 
   const animate = useCallback(() => {
     if (media.length > 0) {
@@ -171,17 +170,13 @@ function MediaCardSlot({ media, onSelect }: { media: Media[]; onSelect(selected:
   }, [media])
 
   useEffect(() => {
-    if (!isAnimating) {
-      return
-    }
-
     requestRef.current = requestAnimationFrame(animate)
     return () => {
       if (requestRef.current !== undefined) {
         cancelAnimationFrame(requestRef.current)
       }
     }
-  }, [isAnimating, currentIndex, animate])
+  }, [currentIndex, animate])
 
   if (currentMedia === undefined) {
     return <></>
@@ -192,7 +187,6 @@ function MediaCardSlot({ media, onSelect }: { media: Media[]; onSelect(selected:
       media={currentMedia}
       onClick={() => {
         onSelect(currentMedia)
-        setIsAnimating((wasAnimating) => !wasAnimating)
       }}
     />
   )
