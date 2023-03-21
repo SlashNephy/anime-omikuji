@@ -22,11 +22,11 @@ export type Filters = Partial<{
   countryOfOrigin: CountryCode
   search: string
   startDate: string
-  startDateGreater: string
-  startDateLesser: string
+  startDateGreater: number
+  startDateLesser: number
   endDate: string
-  endDateGreater: string
-  endDateLesser: string
+  endDateGreater: number
+  endDateLesser: number
   format: MediaFormat
   formatNot: MediaFormat
   formatIn: [MediaFormat]

@@ -1,3 +1,4 @@
+import { MantineProvider } from '@mantine/core'
 import { createTheme, NextUIProvider } from '@nextui-org/react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ThemeProvider } from 'next-themes'
@@ -33,17 +34,19 @@ if (container !== null) {
         }}
       >
         <NextUIProvider>
-          <QueryClientProvider client={queryClient}>
-            <RecoilRoot>
-              <RecoilURLSync
-                deserialize={deserializeFilters}
-                location={{ part: 'search' }}
-                serialize={serializeFilters}
-              >
-                <App />
-              </RecoilURLSync>
-            </RecoilRoot>
-          </QueryClientProvider>
+          <MantineProvider>
+            <QueryClientProvider client={queryClient}>
+              <RecoilRoot>
+                <RecoilURLSync
+                  deserialize={deserializeFilters}
+                  location={{ part: 'search' }}
+                  serialize={serializeFilters}
+                >
+                  <App />
+                </RecoilURLSync>
+              </RecoilRoot>
+            </QueryClientProvider>
+          </MantineProvider>
         </NextUIProvider>
       </ThemeProvider>
     </StrictMode>

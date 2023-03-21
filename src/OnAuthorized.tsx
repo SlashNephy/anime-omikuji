@@ -5,6 +5,8 @@ import { useRecoilValue } from 'recoil'
 import { AdultCheckbox } from './components/AdultCheckbox'
 import { CountryOfOriginDropdown } from './components/CountryOfOriginDropdown'
 import { DoujinCheckbox } from './components/DoujinCheckbox'
+import { DurationRangeSlider } from './components/DurationRangeSlider'
+import { EpisodeRangeSlider } from './components/EpisodeRangeSlider'
 import { FeelingLuckyButton } from './components/FeelingLuckyButton'
 import { FormatDropdown } from './components/FormatDropdown'
 import { FreeWordInput } from './components/FreeWordInput'
@@ -23,6 +25,7 @@ import { StatusDropdown } from './components/StatusDropdown'
 import { TagDropdown } from './components/TagDropdown'
 import { Title } from './components/Title'
 import { UserInfo } from './components/UserInfo'
+import { YearRangeSlider } from './components/YearRangeSlider'
 import { useAniListClient } from './lib/anilist/graphql'
 import { useAniListMedia } from './lib/anilist/media'
 import { randomChoose } from './lib/random'
@@ -62,18 +65,31 @@ export function OnAuthorized({ token }: { token: BearerToken }): JSX.Element {
             <MediaTypeDropdown />
             <GenreDropdown />
             <TagDropdown />
-            <SeasonYearDropdown />
-            <SeasonDropdown />
           </Row>
 
           <Spacer y={1} />
 
           <Row align="center" css={{ gap: '$8' }} justify="center">
+            <SeasonYearDropdown />
+            <SeasonDropdown />
             <FormatDropdown />
             <StatusDropdown />
+          </Row>
+
+          <Spacer y={1} />
+
+          <Row align="center" css={{ gap: '$8' }} justify="center">
             {/* Available On */}
             <CountryOfOriginDropdown />
             <SourceMaterialDropdown />
+          </Row>
+
+          <Spacer y={1} />
+
+          <Row align="center" css={{ gap: '$8' }} justify="center">
+            <YearRangeSlider />
+            <EpisodeRangeSlider />
+            <DurationRangeSlider />
           </Row>
 
           <Spacer y={1} />
