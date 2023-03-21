@@ -1,4 +1,5 @@
 import { Dropdown } from '@nextui-org/react'
+import { addYears, getYear } from 'date-fns'
 
 import { filtersSelector, useSingleDropdownState } from '../lib/recoil'
 
@@ -9,7 +10,7 @@ type DropdownItem = {
 
 const range = (from: number, to: number): number[] => new Array(to - from + 1).fill(0).map((_, i) => i + from)
 
-const items: DropdownItem[] = range(1940, new Date().getFullYear() + 1)
+const items: DropdownItem[] = range(1940, getYear(addYears(Date.now(), 1)))
   .map((i) => ({
     year: i,
   }))

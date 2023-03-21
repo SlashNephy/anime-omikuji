@@ -1,3 +1,4 @@
+import { addSeconds, getMilliseconds } from 'date-fns'
 import secondsToMilliseconds from 'date-fns/secondsToMilliseconds'
 import { useEffect, useMemo } from 'react'
 
@@ -27,7 +28,7 @@ export const useAniListToken = (): BearerToken | null => {
 
     return {
       accessToken,
-      expiresAt: Date.now() + secondsToMilliseconds(parseInt(expiresIn, 10)),
+      expiresAt: getMilliseconds(addSeconds(Date.now(), parseInt(expiresIn, 10))),
       tokenType,
     }
   })
