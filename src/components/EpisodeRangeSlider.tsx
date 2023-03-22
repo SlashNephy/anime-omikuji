@@ -1,13 +1,20 @@
 import { RangeSlider } from '@mantine/core'
 import { Text } from '@nextui-org/react'
-import React from 'react'
-import { useSetRecoilState } from 'recoil'
+import React, { useMemo } from 'react'
+import { useRecoilState } from 'recoil'
 
 import { filtersSelector } from '../lib/recoil'
 
 export function EpisodeRangeSlider(): JSX.Element {
-  const setLesser = useSetRecoilState(filtersSelector('episodesLesser'))
-  const setGreater = useSetRecoilState(filtersSelector('episodesGreater'))
+  const [lesser, setLesser] = useRecoilState(filtersSelector('episodesLesser'))
+  const [greater, setGreater] = useRecoilState(filtersSelector('episodesGreater'))
+  const value = useMemo(() => {
+    if (lesser === undefined || greater === undefined) {
+      return undefined
+    }
+
+    return [lesser, greater] as [number, number]
+  }, [lesser, greater])
 
   // TODO: replace with Next UI
   return (
@@ -18,6 +25,7 @@ export function EpisodeRangeSlider(): JSX.Element {
         min={0}
         minRange={1}
         style={{ width: '150px' }}
+        value={value}
         onChange={([start, end]) => {
           setLesser(start)
           setGreater(end)
