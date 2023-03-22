@@ -13,7 +13,7 @@ export function EpisodeRangeSlider(): JSX.Element {
       return undefined
     }
 
-    return [lesser, greater] as [number, number]
+    return [greater, lesser] as [number, number]
   }, [lesser, greater])
 
   // TODO: replace with Next UI
@@ -27,8 +27,8 @@ export function EpisodeRangeSlider(): JSX.Element {
         style={{ width: '150px' }}
         value={value}
         onChange={([start, end]) => {
-          setLesser(start)
-          setGreater(end)
+          setGreater(start)
+          setLesser(end)
         }}
       />
     </>

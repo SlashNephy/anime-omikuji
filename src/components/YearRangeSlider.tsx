@@ -14,8 +14,8 @@ export function YearRangeSlider(): JSX.Element {
       return undefined
     }
 
-    const start = (lesser + 1) / 10000
-    const end = greater / 10000 - 1
+    const start = (greater + 1) / 10000
+    const end = lesser / 10000 - 1
     return [start, end] as [number, number]
   }, [lesser, greater])
 
@@ -30,8 +30,8 @@ export function YearRangeSlider(): JSX.Element {
         style={{ width: '150px' }}
         value={value}
         onChange={([start, end]) => {
-          setLesser(start * 10000 - 1)
-          setGreater((end + 1) * 10000)
+          setGreater(start * 10000 - 1)
+          setLesser((end + 1) * 10000)
         }}
       />
     </>
