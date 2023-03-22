@@ -4,6 +4,7 @@ import { useRecoilValue } from 'recoil'
 
 import { AdultCheckbox } from './components/AdultCheckbox'
 import { AvailableOnDropdown } from './components/AvailableOnDropdown'
+import { AverageScoreRangeSlider } from './components/AverageScoreRangeSlider'
 import { ClearFiltersButton } from './components/ClearFiltersButton'
 import { CountryOfOriginDropdown } from './components/CountryOfOriginDropdown'
 import { DoujinCheckbox } from './components/DoujinCheckbox'
@@ -92,6 +93,10 @@ export function OnAuthorized({ token }: { token: BearerToken }): JSX.Element {
             <YearRangeSlider />
             <EpisodeRangeSlider />
             <DurationRangeSlider />
+          </Row>
+
+          <Row align="center" css={{ gap: '$8' }} justify="center">
+            <AverageScoreRangeSlider />
           </Row>
 
           <Spacer y={1} />
