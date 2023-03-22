@@ -72,14 +72,14 @@ export type Filters = Partial<{
   sourceIn: MediaSource[]
 }>
 
-const defaultFilters: Filters = {
+export const defaultFilters: Filters = {
   mediaType: MediaType.Anime,
   isAdult: false,
   countryOfOrigin: 'JP',
 }
 
 const filtersKey = 'filters'
-const filters = atom<Filters>({
+export const filters = atom<Filters>({
   key: filtersKey,
   default: defaultFilters,
   effects: [
