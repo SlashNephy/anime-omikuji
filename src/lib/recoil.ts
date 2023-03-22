@@ -1,4 +1,5 @@
 import { custom } from '@recoiljs/refine'
+import { addYears, getYear } from 'date-fns'
 import { compressToEncodedURIComponent, decompressFromEncodedURIComponent } from 'lz-string'
 import { useCallback } from 'react'
 import { atom, DefaultValue, selector, selectorFamily, useRecoilState } from 'recoil'
@@ -77,6 +78,30 @@ const defaultFilters: Filters = {
   isAdult: false,
   countryOfOrigin: 'JP',
 }
+
+export const yearToDateLesser = (year: number): number => (year + 1) * 1_0000
+export const yearToDateGreater = (year: number): number => year * 1_0000 - 1
+
+type NumericFilters = Record<
+  {
+    [K in keyof Required<Filters>]: Required<Filters>[K] extends number ? K : never
+  }[keyof Required<Filters>],
+  number
+>
+
+export const minFilterValues = {
+  averageScoreGreater: 0,
+  durationGreater: 0,
+  episodesGreater: 0,
+  startDateGreater: yearToDateGreater(1970),
+} as NumericFilters
+
+export const maxFilterValues = {
+  averageScoreLesser: 10,
+  durationLesser: 170,
+  episodesLesser: 150,
+  startDateLesser: yearToDateLesser(getYear(addYears(Date.now(), 1))),
+} as NumericFilters
 
 const filtersKey = 'filters'
 export const filters = atom<Filters>({
@@ -180,6 +205,29 @@ export const serializeFilters = (payload: unknown): string => {
     if (typeof v === 'boolean' && v === defaultFilters[k as keyof Filters]) {
       // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
       delete newValue[k]
+    }
+
+    // trim default number
+    if (typeof v === 'number' && v === defaultFilters[k as keyof Filters]) {
+      // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
+      delete newValue[k]
+    }
+
+    // trim number exceeded min/max
+    if (typeof v === 'number') {
+      // min
+      const min = minFilterValues[k as keyof NumericFilters] as number | undefined
+      if (min !== undefined && v <= min) {
+        // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
+        delete newValue[k]
+      }
+
+      // max
+      const max = maxFilterValues[k as keyof NumericFilters] as number | undefined
+      if (max !== undefined && v >= max) {
+        // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
+        delete newValue[k]
+      }
     }
   }
 

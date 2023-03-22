@@ -1,10 +1,9 @@
 import { RangeSlider } from '@mantine/core'
 import { Text } from '@nextui-org/react'
-import { addYears, getYear } from 'date-fns'
 import React, { useMemo } from 'react'
 import { useRecoilState } from 'recoil'
 
-import { filtersSelector } from '../lib/recoil'
+import { filtersSelector, maxFilterValues, minFilterValues, yearToDateGreater, yearToDateLesser } from '../lib/recoil'
 
 export function YearRangeSlider(): JSX.Element {
   const [lesser, setLesser] = useRecoilState(filtersSelector('startDateLesser'))
@@ -14,8 +13,8 @@ export function YearRangeSlider(): JSX.Element {
       return undefined
     }
 
-    const start = (greater + 1) / 10000
-    const end = lesser / 10000 - 1
+    const start = dateGreaterToYear(greater)
+    const end = dateLesserToYear(lesser)
     return [start, end] as [number, number]
   }, [lesser, greater])
 
@@ -24,16 +23,19 @@ export function YearRangeSlider(): JSX.Element {
     <>
       <Text>Year Range</Text>
       <RangeSlider
-        max={getYear(addYears(Date.now(), 1))}
-        min={1970}
+        max={dateLesserToYear(maxFilterValues.startDateLesser)}
+        min={dateGreaterToYear(minFilterValues.startDateGreater)}
         minRange={1}
         style={{ width: '150px' }}
         value={value}
         onChange={([start, end]) => {
-          setGreater(start * 10000 - 1)
-          setLesser((end + 1) * 10000)
+          setGreater(yearToDateGreater(start))
+          setLesser(yearToDateLesser(end))
         }}
       />
     </>
   )
 }
+
+const dateLesserToYear = (lesser: number): number => lesser / 1_0000 - 1
+const dateGreaterToYear = (greater: number): number => (greater + 1) / 1_0000

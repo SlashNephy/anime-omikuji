@@ -3,7 +3,7 @@ import { Text } from '@nextui-org/react'
 import React, { useMemo } from 'react'
 import { useRecoilState } from 'recoil'
 
-import { filtersSelector } from '../lib/recoil'
+import { filtersSelector, maxFilterValues, minFilterValues } from '../lib/recoil'
 
 export function EpisodeRangeSlider(): JSX.Element {
   const [lesser, setLesser] = useRecoilState(filtersSelector('episodesLesser'))
@@ -21,8 +21,8 @@ export function EpisodeRangeSlider(): JSX.Element {
     <>
       <Text>Episodes</Text>
       <RangeSlider
-        max={150}
-        min={0}
+        max={maxFilterValues.episodesLesser}
+        min={minFilterValues.episodesGreater}
         minRange={1}
         style={{ width: '150px' }}
         value={value}
