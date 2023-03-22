@@ -72,7 +72,7 @@ export type Filters = Partial<{
   sourceIn: MediaSource[]
 }>
 
-export const defaultFilters: Filters = {
+const defaultFilters: Filters = {
   mediaType: MediaType.Anime,
   isAdult: false,
   countryOfOrigin: 'JP',
