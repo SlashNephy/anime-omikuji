@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import { useRecoilValue } from 'recoil'
 
 import { AdultCheckbox } from './components/AdultCheckbox'
+import { AvailableOnDropdown } from './components/AvailableOnDropdown'
+import { ClearFiltersButton } from './components/ClearFiltersButton'
 import { CountryOfOriginDropdown } from './components/CountryOfOriginDropdown'
 import { DoujinCheckbox } from './components/DoujinCheckbox'
 import { DurationRangeSlider } from './components/DurationRangeSlider'
@@ -79,7 +81,7 @@ export function OnAuthorized({ token }: { token: BearerToken }): JSX.Element {
           <Spacer y={1} />
 
           <Row align="center" css={{ gap: '$8' }} justify="center">
-            {/* Available On */}
+            <AvailableOnDropdown />
             <CountryOfOriginDropdown />
             <SourceMaterialDropdown />
           </Row>
@@ -131,6 +133,8 @@ export function OnAuthorized({ token }: { token: BearerToken }): JSX.Element {
                   })
               }}
             />
+            <Spacer x={1} />
+            <ClearFiltersButton />
           </Row>
         </Card.Body>
       </Card>
