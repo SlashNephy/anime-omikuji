@@ -13,7 +13,7 @@ export function DurationRangeSlider(): JSX.Element {
       return undefined
     }
 
-    return [greater, lesser] as [number, number]
+    return [greater + 1, lesser - 1] as [number, number]
   }, [lesser, greater])
 
   // TODO: replace with Next UI
@@ -27,8 +27,8 @@ export function DurationRangeSlider(): JSX.Element {
         style={{ width: '150px' }}
         value={value}
         onChange={([start, end]) => {
-          setGreater(start)
-          setLesser(end)
+          setGreater(start - 1)
+          setLesser(end + 1)
         }}
       />
     </>
