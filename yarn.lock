@@ -1823,6 +1823,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mantine/hooks@npm:6.0.4":
+  version: 6.0.4
+  resolution: "@mantine/hooks@npm:6.0.4"
+  peerDependencies:
+    react: ">=16.8.0"
+  checksum: e0ba4f1d57f27be0c8763335d8b686d7e6b43958aff7b0c04641f960766ffecf1b07b3579167de915d83e87ccb2e414f8ee5bd7b7305e35d4b67449b57364229
+  languageName: node
+  linkType: hard
+
 "@mantine/styles@npm:6.0.4":
   version: 6.0.4
   resolution: "@mantine/styles@npm:6.0.4"
@@ -3666,6 +3675,7 @@ __metadata:
     "@graphql-codegen/cli": 3.2.2
     "@graphql-codegen/client-preset": 2.1.1
     "@mantine/core": 6.0.4
+    "@mantine/hooks": 6.0.4
     "@nextui-org/react": 1.0.0-beta.12
     "@slashnephy/eslint-config": 0.4.2
     "@slashnephy/prettier-config": 0.1.16
