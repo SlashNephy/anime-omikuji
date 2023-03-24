@@ -26,7 +26,7 @@
     "@nextui-org/react": "1.0.0-beta.12",
     "@tabler/icons-react": "2.10.0",
     "@tanstack/react-query": "4.26.1",
-    "country-flag-icons": "1.5.5",
+    "country-flag-icons": "1.5.6",
     "date-fns": "2.29.3",
     "font-color-contrast": "11.1.0",
     "graphql-request": "5.2.0",
