@@ -3328,9 +3328,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-query@npm:4.27.0":
-  version: 4.27.0
-  resolution: "@tanstack/react-query@npm:4.27.0"
+"@tanstack/react-query@npm:4.28.0":
+  version: 4.28.0
+  resolution: "@tanstack/react-query@npm:4.28.0"
   dependencies:
     "@tanstack/query-core": 4.27.0
     use-sync-external-store: ^1.2.0
@@ -3343,7 +3343,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: 15cebe9ccb8df737548763223438ce0c28808e3a9f2434307d2ac966a6bb8da01f172019a5490966503797ccdf2482d1e488f5fe52de5da86dbdae20ef772e8c
+  checksum: 7baa70d22b55cfa22f8a1d92ba9f8379c5436ee81fce3f0e7df4a8c29bb26bfef4a83759cf10f752b40ae2940099fcce88ce91a773240f4999ae91136980c6e3
   languageName: node
   linkType: hard
 
@@ -3795,7 +3795,7 @@ __metadata:
     "@slashnephy/eslint-config": 0.4.8
     "@slashnephy/prettier-config": 0.1.16
     "@tabler/icons-react": 2.11.0
-    "@tanstack/react-query": 4.27.0
+    "@tanstack/react-query": 4.28.0
     "@types/react": 18.0.31
     "@types/react-dom": 18.0.11
     "@vitejs/plugin-react-swc": 3.2.0
