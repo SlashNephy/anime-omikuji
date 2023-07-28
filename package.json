@@ -23,7 +23,7 @@
     "@emotion/react": "11.11.1",
     "@mantine/core": "6.0.10",
     "@mantine/hooks": "6.0.10",
-    "@nextui-org/react": "1.0.0-beta.12",
+    "@nextui-org/react": "1.0.0-beta.13",
     "@tabler/icons-react": "2.18.0",
     "@tanstack/react-query": "4.29.5",
     "country-flag-icons": "1.5.7",
