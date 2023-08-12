@@ -1848,36 +1848,36 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/core@npm:6.0.17":
-  version: 6.0.17
-  resolution: "@mantine/core@npm:6.0.17"
+"@mantine/core@npm:6.0.19":
+  version: 6.0.19
+  resolution: "@mantine/core@npm:6.0.19"
   dependencies:
     "@floating-ui/react": ^0.19.1
-    "@mantine/styles": 6.0.17
-    "@mantine/utils": 6.0.17
+    "@mantine/styles": 6.0.19
+    "@mantine/utils": 6.0.19
     "@radix-ui/react-scroll-area": 1.0.2
     react-remove-scroll: ^2.5.5
     react-textarea-autosize: 8.3.4
   peerDependencies:
-    "@mantine/hooks": 6.0.17
+    "@mantine/hooks": 6.0.19
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: a73418fbfa58dd50678be24eb4d06237e859e56421b564d4b9d280989171dc13867c95d15f81c62d02d2cf5ad8a0ffec23edfe121bb645e1afaace332b393616
+  checksum: a564b1d6fc1c66d6e9d13b657ae5e5a8b23f7823d19d0e0009865c73e15ce42eef44da9a7c0f44a6a9d75aaba783785c6d0a63972cf443f2fc06e6d218f4076d
   languageName: node
   linkType: hard
 
-"@mantine/hooks@npm:6.0.17":
-  version: 6.0.17
-  resolution: "@mantine/hooks@npm:6.0.17"
+"@mantine/hooks@npm:6.0.19":
+  version: 6.0.19
+  resolution: "@mantine/hooks@npm:6.0.19"
   peerDependencies:
     react: ">=16.8.0"
-  checksum: bcd8c0ffa848972f181b014eb8fd5c015116a64a9c1e3b2db3814f449bbe1cc796c8dedaf2a29be3bd8913fed4217459b5594de55d025f6d8c2e5743d83ed999
+  checksum: 9fe3bf435f3631495b58a5b840c2c02e4a24299f7bedded2c8cea4701bc87c50f4ab54a12e8b5be341ee8dbf032184f5dc8ff01b015ffec964739f2bdd718e52
   languageName: node
   linkType: hard
 
-"@mantine/styles@npm:6.0.17":
-  version: 6.0.17
-  resolution: "@mantine/styles@npm:6.0.17"
+"@mantine/styles@npm:6.0.19":
+  version: 6.0.19
+  resolution: "@mantine/styles@npm:6.0.19"
   dependencies:
     clsx: 1.1.1
     csstype: 3.0.9
@@ -1885,16 +1885,16 @@ __metadata:
     "@emotion/react": ">=11.9.0"
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: b3495220074d95fa8864d1e5a512f17e07443c1ac2a84315252057615473b54d87006e693e2c4191d2c0ae0d7d2b1e0dd14dd2da477aa7e9ed57377ba5a12bf6
+  checksum: 4ea40abe0d079a8b7437c660e200e90d40529b129e6682009a827de27b4ffeab9d324100e074dba67719b0e0c0b5ac4789971e690cbdf87de86d9f0de29270c0
   languageName: node
   linkType: hard
 
-"@mantine/utils@npm:6.0.17":
-  version: 6.0.17
-  resolution: "@mantine/utils@npm:6.0.17"
+"@mantine/utils@npm:6.0.19":
+  version: 6.0.19
+  resolution: "@mantine/utils@npm:6.0.19"
   peerDependencies:
     react: ">=16.8.0"
-  checksum: 393869f22cfea70ff5b7483b7e23bc79fb39f1be7079baa388235a9ccf648845e10ef7c70a47081728ef09df682484bedfcf00c375bcd21a524fd114f892c9b5
+  checksum: c33e2eba6d78e2b07c222c79a086da9d43a39a1fb8e409b10ab5775f6855325fd30c56b17fd67f9a827497eff2fdc22fff4b9190c2d7069b2c58565d63b3a450
   languageName: node
   linkType: hard
 
@@ -3801,8 +3801,8 @@ __metadata:
     "@emotion/react": 11.11.1
     "@graphql-codegen/cli": 5.0.0
     "@graphql-codegen/client-preset": 4.1.0
-    "@mantine/core": 6.0.17
-    "@mantine/hooks": 6.0.17
+    "@mantine/core": 6.0.19
+    "@mantine/hooks": 6.0.19
     "@nextui-org/react": 1.0.0-beta.9-dbg2
     "@slashnephy/eslint-config": 1.0.6
     "@slashnephy/prettier-config": 0.1.27
