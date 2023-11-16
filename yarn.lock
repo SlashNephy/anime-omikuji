@@ -3137,12 +3137,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@slashnephy/prettier-config@npm:1.0.41":
-  version: 1.0.41
-  resolution: "@slashnephy/prettier-config@npm:1.0.41"
+"@slashnephy/prettier-config@npm:1.0.42":
+  version: 1.0.42
+  resolution: "@slashnephy/prettier-config@npm:1.0.42"
   peerDependencies:
     prettier: ^3
-  checksum: 02e97dd31bb62d3b3c0ee00afb3521ff662c255463262050cb3b5bf00db6d3e2156f3b61cdbe0f1ec95bb7d8cb774c454e6fc13d66af746796559071347108ae
+  checksum: 9ca5fb0d7127edba7f6041a3f0971a390f9fce2a2d7ecccaee9cbffcd0e1df7cfb9747dd68ef183b78f838e53c24d0a26894388f9418754325102dce90c5edfb
   languageName: node
   linkType: hard
 
@@ -3785,7 +3785,7 @@ __metadata:
     "@mantine/hooks": 6.0.21
     "@nextui-org/react": 1.0.0-beta.9-dbg2
     "@slashnephy/eslint-config": 2.0.59
-    "@slashnephy/prettier-config": 1.0.41
+    "@slashnephy/prettier-config": 1.0.42
     "@tabler/icons-react": 2.40.0
     "@tanstack/react-query": 4.36.1
     "@types/react": 18.2.37
