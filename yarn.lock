@@ -3171,9 +3171,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@slashnephy/eslint-config@npm:2.0.76":
-  version: 2.0.76
-  resolution: "@slashnephy/eslint-config@npm:2.0.76"
+"@slashnephy/eslint-config@npm:2.0.77":
+  version: 2.0.77
+  resolution: "@slashnephy/eslint-config@npm:2.0.77"
   dependencies:
     "@emotion/eslint-plugin": 11.11.0
     "@next/eslint-plugin-next": 13.5.6
@@ -3213,11 +3213,11 @@ __metadata:
     eslint-plugin-vitest: 0.3.10
     eslint-plugin-xss: 0.1.12
     eslint-plugin-yml: 1.10.0
-    typescript: 5.3.2
+    typescript: 5.3.3
     yaml-eslint-parser: 1.2.2
   peerDependencies:
     eslint: ^8
-  checksum: 1884819e0542c988594f1552c4bd8d131fdcfe18e5db9e40d8ff00f6027e08f13bca7758fe68e8ac1a02bcac04ca6046f52b96fc4b1e1362d775db67c740d48f
+  checksum: 8d131693afbd537940e13c9bc1ad19fb42be7225dccb5b3fe8b077a1a7b5c46d679f7b446abff3ca6bcc15a2e94b5935fe0484680323f84eda7c849c01e78203
   languageName: node
   linkType: hard
 
@@ -3869,7 +3869,7 @@ __metadata:
     "@mantine/core": 6.0.21
     "@mantine/hooks": 6.0.21
     "@nextui-org/react": 1.0.0-beta.9-dbg2
-    "@slashnephy/eslint-config": 2.0.76
+    "@slashnephy/eslint-config": 2.0.77
     "@slashnephy/prettier-config": 1.0.56
     "@tabler/icons-react": 2.42.0
     "@tanstack/react-query": 4.36.1
@@ -9463,13 +9463,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:5.3.2":
-  version: 5.3.2
-  resolution: "typescript@npm:5.3.2"
+"typescript@npm:5.3.3":
+  version: 5.3.3
+  resolution: "typescript@npm:5.3.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: d92534dda639eb825db013203404c1fabca8ac630564283c9e7dc9e64fd9c9346c2de95ecebdf3e6e8c1c32941bca1cfe0da37877611feb9daf8feeaea58d230
+  checksum: 2007ccb6e51bbbf6fde0a78099efe04dc1c3dfbdff04ca3b6a8bc717991862b39fd6126c0c3ebf2d2d98ac5e960bcaa873826bb2bb241f14277034148f41f6a2
   languageName: node
   linkType: hard
 
@@ -9483,13 +9483,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@5.3.2#~builtin<compat/typescript>":
-  version: 5.3.2
-  resolution: "typescript@patch:typescript@npm%3A5.3.2#~builtin<compat/typescript>::version=5.3.2&hash=e012d7"
+"typescript@patch:typescript@5.3.3#~builtin<compat/typescript>":
+  version: 5.3.3
+  resolution: "typescript@patch:typescript@npm%3A5.3.3#~builtin<compat/typescript>::version=5.3.3&hash=e012d7"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 47b2e63418ea7ef7dd0bf359ee41c6fca852c680826089269c5d03673ead471e052b172561f377f9e51212054e5f0fe19dd58085ff7db7b168449a6af704c784
+  checksum: 4e604a9e107ce0c23b16a2f8d79d0531d4d8fe9ebbb7a8c395c66998c39892f0e0a071ef0b0d4e66420a8ec2b8d6cfd9cdb29ba24f25b37cba072e9282376df9
   languageName: node
   linkType: hard
 
