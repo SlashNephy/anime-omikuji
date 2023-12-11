@@ -3506,7 +3506,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*":
+"@types/react@npm:*, @types/react@npm:18.2.43":
   version: 18.2.43
   resolution: "@types/react@npm:18.2.43"
   dependencies:
@@ -3514,17 +3514,6 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: e7e4da18c7b14e4b8b1ea630d1d8224835698f2bb2485766455bfb9dea93b8ee6cc549a9fe1cb10c984e62685db44fcfb61e8fac913b008cd30a92087f25b9df
-  languageName: node
-  linkType: hard
-
-"@types/react@npm:18.2.42":
-  version: 18.2.42
-  resolution: "@types/react@npm:18.2.42"
-  dependencies:
-    "@types/prop-types": "*"
-    "@types/scheduler": "*"
-    csstype: ^3.0.2
-  checksum: d2019afdf48303a3a598a97cc9dd2284e3c04b369e791f6ba3c33232b7f8645daff97b093a19f8b3ce75ac8a261b47552cb4513226ab16d843eb9443b0f91844
   languageName: node
   linkType: hard
 
@@ -3887,7 +3876,7 @@ __metadata:
     "@slashnephy/prettier-config": 1.0.61
     "@tabler/icons-react": 2.42.0
     "@tanstack/react-query": 4.36.1
-    "@types/react": 18.2.42
+    "@types/react": 18.2.43
     "@types/react-dom": 18.2.17
     "@vitejs/plugin-react-swc": 3.5.0
     concurrently: 8.2.2
