@@ -24,7 +24,7 @@
     "@mantine/core": "6.0.21",
     "@mantine/hooks": "6.0.21",
     "@nextui-org/react": "1.0.0-beta.9-dbg2",
-    "@tabler/icons-react": "2.42.0",
+    "@tabler/icons-react": "2.44.0",
     "@tanstack/react-query": "4.36.1",
     "country-flag-icons": "1.5.9",
     "date-fns": "2.30.0",
