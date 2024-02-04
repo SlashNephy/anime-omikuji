@@ -3810,22 +3810,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tabler/icons-react@npm:2.46.0":
-  version: 2.46.0
-  resolution: "@tabler/icons-react@npm:2.46.0"
+"@tabler/icons-react@npm:2.47.0":
+  version: 2.47.0
+  resolution: "@tabler/icons-react@npm:2.47.0"
   dependencies:
-    "@tabler/icons": 2.46.0
+    "@tabler/icons": 2.47.0
     prop-types: ^15.7.2
   peerDependencies:
     react: ^16.5.1 || ^17.0.0 || ^18.0.0
-  checksum: 5aafc814602f108e0a02a65a3c267c427b0ca36bcd8684adcc804dce26119c15d4badf0e3c7979c1bd19fb642b44a581372adb2caf820028c95583625a9299f1
+  checksum: f896a1fc146272d289a2a101e36027c08a6618cf930647e1b7b7dafd684aed6a4e63cc90b54b5b6742570125556c51162be4f1119d2881291c3e3a0f9427bc25
   languageName: node
   linkType: hard
 
-"@tabler/icons@npm:2.46.0":
-  version: 2.46.0
-  resolution: "@tabler/icons@npm:2.46.0"
-  checksum: b805e92f0a7a0a634f618eb20626e496e270c9b67d0a79fe99caf618fe7b6dc7138754a1687dfeaefa29e22e9928824cc4c7e48145808fe32088f1d0ceba464a
+"@tabler/icons@npm:2.47.0":
+  version: 2.47.0
+  resolution: "@tabler/icons@npm:2.47.0"
+  checksum: 610582883f22510a3528fd7b5d0613faf815d6b0f48d42514ed080ac083bdbcbc3a7e49c62819c5c479d2d9d30dbb3e1cfc9978c0160f3900724890ec57caaab
   languageName: node
   linkType: hard
 
@@ -4400,7 +4400,7 @@ __metadata:
     "@nextui-org/react": 1.0.0-beta.9-dbg2
     "@slashnephy/eslint-config": 2.3.10
     "@slashnephy/prettier-config": 1.0.73
-    "@tabler/icons-react": 2.46.0
+    "@tabler/icons-react": 2.47.0
     "@tanstack/react-query": 4.36.1
     "@types/react": 18.2.48
     "@types/react-dom": 18.2.18
