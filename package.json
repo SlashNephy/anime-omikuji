@@ -31,7 +31,7 @@
     "font-color-contrast": "11.1.0",
     "graphql-request": "5.2.0",
     "lz-string": "1.5.0",
-    "next-themes": "0.2.1",
+    "next-themes": "0.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "recoil": "0.7.7",
