@@ -4431,7 +4431,7 @@ __metadata:
     "@vitejs/plugin-react-swc": 3.7.0
     concurrently: 8.2.2
     country-flag-icons: 1.5.12
-    date-fns: 2.30.0
+    date-fns: 3.6.0
     eslint: 8.57.0
     font-color-contrast: 11.1.0
     graphql: 16.8.1
@@ -5373,7 +5373,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:2.30.0, date-fns@npm:^2.30.0":
+"date-fns@npm:3.6.0":
+  version: 3.6.0
+  resolution: "date-fns@npm:3.6.0"
+  checksum: 0daa1e9a436cf99f9f2ae9232b55e11f3dd46132bee10987164f3eebd29f245b2e066d7d7db40782627411ecf18551d8f4c9fcdf2226e48bb66545407d448ab7
+  languageName: node
+  linkType: hard
+
+"date-fns@npm:^2.30.0":
   version: 2.30.0
   resolution: "date-fns@npm:2.30.0"
   dependencies:
