@@ -4358,7 +4358,7 @@ __metadata:
     graphql: 16.9.0
     graphql-request: 5.2.0
     lz-string: 1.5.0
-    next-themes: 0.2.1
+    next-themes: 0.3.0
     prettier: 3.3.3
     react: 18.3.1
     react-dom: 18.3.1
@@ -8444,14 +8444,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-themes@npm:0.2.1":
-  version: 0.2.1
-  resolution: "next-themes@npm:0.2.1"
+"next-themes@npm:0.3.0":
+  version: 0.3.0
+  resolution: "next-themes@npm:0.3.0"
   peerDependencies:
-    next: "*"
-    react: "*"
-    react-dom: "*"
-  checksum: ebc248b956138e73436c4ed0a0f0a877a0a48a33156db577029b8b8469e48b5c777d61abf2baeb75953378febea74e067a4869ff90b4a3e94fce123289b862ba
+    react: ^16.8 || ^17 || ^18
+    react-dom: ^16.8 || ^17 || ^18
+  checksum: 4285c4969eac517ad7addd773bcb71e7d14bc6c6e3b24eb97b80a6e06ac03fb6cb345e75dfb448156d14430d06289948eb8cfdeb52402ca7ce786093d01d2878
   languageName: node
   linkType: hard
 
