@@ -2161,12 +2161,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/eslint-plugin-next@npm:14.2.13":
-  version: 14.2.13
-  resolution: "@next/eslint-plugin-next@npm:14.2.13"
+"@next/eslint-plugin-next@npm:14.2.14":
+  version: 14.2.14
+  resolution: "@next/eslint-plugin-next@npm:14.2.14"
   dependencies:
     glob: 10.3.10
-  checksum: 7e98863a0d6edfc3c79ee7922acc55d01c8d67a947c62d9ea5170c6689a62be548b1c7d033cda6cc6939b001c5846b46697a58bae46fdd0a3e9886b177ebcef1
+  checksum: 4ec9c81b22f651afa2ff50910d6055ff169b3a7b8c0134d1ba312f6ceef2c89389b7da6fcd78cde9e6c4ec215a1bce63047781fc6077345393533fb6dcbe3275
   languageName: node
   linkType: hard
 
@@ -3472,13 +3472,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@slashnephy/eslint-config@npm:2.3.121":
-  version: 2.3.121
-  resolution: "@slashnephy/eslint-config@npm:2.3.121"
+"@slashnephy/eslint-config@npm:2.3.123":
+  version: 2.3.123
+  resolution: "@slashnephy/eslint-config@npm:2.3.123"
   dependencies:
     "@emotion/eslint-plugin": 11.12.0
     "@graphql-eslint/eslint-plugin": 3.20.1
-    "@next/eslint-plugin-next": 14.2.13
+    "@next/eslint-plugin-next": 14.2.14
     "@rushstack/eslint-patch": 1.10.4
     "@stylistic/eslint-plugin": 2.8.0
     "@susisu/eslint-plugin-safe-typescript": 0.9.0
@@ -3486,7 +3486,7 @@ __metadata:
     "@typescript-eslint/parser": 7.2.0
     "@vitest/eslint-plugin": 1.1.4
     eslint-config-airbnb: 19.0.4
-    eslint-config-next: 14.2.13
+    eslint-config-next: 14.2.14
     eslint-config-prettier: 9.1.0
     eslint-config-standard: 17.1.0
     eslint-gitignore: 0.1.0
@@ -3496,7 +3496,7 @@ __metadata:
     eslint-plugin-deprecation: 3.0.0
     eslint-plugin-editorconfig: 4.0.3
     eslint-plugin-eslint-comments: 3.2.0
-    eslint-plugin-import: 2.30.0
+    eslint-plugin-import: 2.31.0
     eslint-plugin-jest: 28.8.3
     eslint-plugin-jest-formatting: 3.1.0
     eslint-plugin-jsx-a11y: 6.10.0
@@ -3505,7 +3505,7 @@ __metadata:
     eslint-plugin-node: 11.1.0
     eslint-plugin-package-json: 0.2.0
     eslint-plugin-promise: 7.1.0
-    eslint-plugin-react: 7.37.0
+    eslint-plugin-react: 7.37.1
     eslint-plugin-react-hooks: 4.6.2
     eslint-plugin-react-refresh: 0.4.12
     eslint-plugin-relay: 1.8.3
@@ -3520,7 +3520,7 @@ __metadata:
     yaml-eslint-parser: 1.2.3
   peerDependencies:
     eslint: ^8
-  checksum: b4ac107ec75b4a2a043aa723a87a0df0836c28be058741b0da762dadf3d76486834fc0584ecc9db14165a075d4aff726784f57a232147911449c010458e76fd6
+  checksum: 249b2ad3ae2aeae6b264bbc7787d68433ac340e0d4c3319f4b61d7bbd1dd5a4c21b6a8e84f1a5593877cb401c833a650b4fccccbcdb6eee144d7d78e84286a75
   languageName: node
   linkType: hard
 
@@ -4416,7 +4416,7 @@ __metadata:
     "@mantine/core": 6.0.22
     "@mantine/hooks": 6.0.22
     "@nextui-org/react": 1.0.0-beta.9-dbg2
-    "@slashnephy/eslint-config": 2.3.121
+    "@slashnephy/eslint-config": 2.3.123
     "@slashnephy/prettier-config": 1.0.73
     "@tabler/icons-react": 2.47.0
     "@tanstack/react-query": 4.36.1
@@ -5968,11 +5968,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-next@npm:14.2.13":
-  version: 14.2.13
-  resolution: "eslint-config-next@npm:14.2.13"
+"eslint-config-next@npm:14.2.14":
+  version: 14.2.14
+  resolution: "eslint-config-next@npm:14.2.14"
   dependencies:
-    "@next/eslint-plugin-next": 14.2.13
+    "@next/eslint-plugin-next": 14.2.14
     "@rushstack/eslint-patch": ^1.3.3
     "@typescript-eslint/eslint-plugin": ^5.4.2 || ^6.0.0 || ^7.0.0 || ^8.0.0
     "@typescript-eslint/parser": ^5.4.2 || ^6.0.0 || ^7.0.0 || ^8.0.0
@@ -5988,7 +5988,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 6931978b930506f7d31b71d2b38ed75dcff6baafbd50dd64ceab27e0de18a37ac3eeed43a1f910e7ead3b711b43769399d0bd9f69eef864e2268240c9fe56f7e
+  checksum: 6f2c1fbae53d9ef024dc84f509e37746c243f0224024facf2c51c9386e89e26b1873fef636042f2b49c46e63effc74783a07060960581961ee62e1b5e6fcdee3
   languageName: node
   linkType: hard
 
@@ -6064,7 +6064,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-module-utils@npm:^2.12.0, eslint-module-utils@npm:^2.8.1, eslint-module-utils@npm:^2.9.0":
+"eslint-module-utils@npm:^2.12.0, eslint-module-utils@npm:^2.8.1":
   version: 2.12.0
   resolution: "eslint-module-utils@npm:2.12.0"
   dependencies:
@@ -6150,35 +6150,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-import@npm:2.30.0":
-  version: 2.30.0
-  resolution: "eslint-plugin-import@npm:2.30.0"
-  dependencies:
-    "@rtsao/scc": ^1.1.0
-    array-includes: ^3.1.8
-    array.prototype.findlastindex: ^1.2.5
-    array.prototype.flat: ^1.3.2
-    array.prototype.flatmap: ^1.3.2
-    debug: ^3.2.7
-    doctrine: ^2.1.0
-    eslint-import-resolver-node: ^0.3.9
-    eslint-module-utils: ^2.9.0
-    hasown: ^2.0.2
-    is-core-module: ^2.15.1
-    is-glob: ^4.0.3
-    minimatch: ^3.1.2
-    object.fromentries: ^2.0.8
-    object.groupby: ^1.0.3
-    object.values: ^1.2.0
-    semver: ^6.3.1
-    tsconfig-paths: ^3.15.0
-  peerDependencies:
-    eslint: ^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8
-  checksum: 0ec1ad69c0d22f15bc4a49ee97ae757e4adfc3181996f2c4a1ed4d5028bd99bab38e7623e58ef4477ba1db8425f441e4e986367125273efa4c5f7ad2c4467a9a
-  languageName: node
-  linkType: hard
-
-"eslint-plugin-import@npm:^2.28.1":
+"eslint-plugin-import@npm:2.31.0, eslint-plugin-import@npm:^2.28.1":
   version: 2.31.0
   resolution: "eslint-plugin-import@npm:2.31.0"
   dependencies:
@@ -6351,35 +6323,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react@npm:7.37.0":
-  version: 7.37.0
-  resolution: "eslint-plugin-react@npm:7.37.0"
-  dependencies:
-    array-includes: ^3.1.8
-    array.prototype.findlast: ^1.2.5
-    array.prototype.flatmap: ^1.3.2
-    array.prototype.tosorted: ^1.1.4
-    doctrine: ^2.1.0
-    es-iterator-helpers: ^1.0.19
-    estraverse: ^5.3.0
-    hasown: ^2.0.2
-    jsx-ast-utils: ^2.4.1 || ^3.0.0
-    minimatch: ^3.1.2
-    object.entries: ^1.1.8
-    object.fromentries: ^2.0.8
-    object.values: ^1.2.0
-    prop-types: ^15.8.1
-    resolve: ^2.0.0-next.5
-    semver: ^6.3.1
-    string.prototype.matchall: ^4.0.11
-    string.prototype.repeat: ^1.0.0
-  peerDependencies:
-    eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
-  checksum: ece92e28b34ced0fd6bddebd41234ee53187b236fd507abef4f61cc868e27edd94fb7e290f44ff546037a6862c3302e848185a5e6511e2bcdf1883a1bfaa4ffc
-  languageName: node
-  linkType: hard
-
-"eslint-plugin-react@npm:^7.33.2":
+"eslint-plugin-react@npm:7.37.1, eslint-plugin-react@npm:^7.33.2":
   version: 7.37.1
   resolution: "eslint-plugin-react@npm:7.37.1"
   dependencies:
