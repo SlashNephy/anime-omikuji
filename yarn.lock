@@ -4440,7 +4440,7 @@ __metadata:
     recoil-sync: 0.2.0
     ts-array-length: 0.1.3
     typescript: 4.9.5
-    vite: 5.4.8
+    vite: 5.4.9
     zod: 3.23.8
   languageName: unknown
   linkType: soft
@@ -10566,9 +10566,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:5.4.8":
-  version: 5.4.8
-  resolution: "vite@npm:5.4.8"
+"vite@npm:5.4.9":
+  version: 5.4.9
+  resolution: "vite@npm:5.4.9"
   dependencies:
     esbuild: ^0.21.3
     fsevents: ~2.3.3
@@ -10605,7 +10605,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: b5686ff76a60d53092dc13a5c1e5627165226b8e3da7736931adf87bbe58d383bca386383cea134750108c2d42750c916db3f2314ac90a9477d693950145f140
+  checksum: d3229e0618ece284af0478ec09c474a7a70ac369920716afdb6ebed8e320fd17a17c60afddba0d436698fe4837474cccd057c3e7d8270281b57506b78c5fbb8c
   languageName: node
   linkType: hard
 
