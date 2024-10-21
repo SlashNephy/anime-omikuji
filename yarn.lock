@@ -3473,9 +3473,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@slashnephy/eslint-config@npm:2.3.127":
-  version: 2.3.127
-  resolution: "@slashnephy/eslint-config@npm:2.3.127"
+"@slashnephy/eslint-config@npm:2.3.128":
+  version: 2.3.128
+  resolution: "@slashnephy/eslint-config@npm:2.3.128"
   dependencies:
     "@emotion/eslint-plugin": 11.12.0
     "@graphql-eslint/eslint-plugin": 3.20.1
@@ -3521,7 +3521,7 @@ __metadata:
     yaml-eslint-parser: 1.2.3
   peerDependencies:
     eslint: ^8
-  checksum: 7831b6d1877c5bf4d832b698b6696f49e48b7edc623d81a81011b6ea7b78e80b41d115957b21e7fde4901445719e545fb6311a0ca585f9a58793771f9c98dcce
+  checksum: 49ef3192bd8127d274a88844707e3a6c54ae61039f50e4f4000700a6d7213e968bad1e9891e11cb318930218d17a8e71e6c233f4a14bc0f611991c12464a8ffc
   languageName: node
   linkType: hard
 
@@ -4415,7 +4415,7 @@ __metadata:
     "@mantine/core": 6.0.22
     "@mantine/hooks": 6.0.22
     "@nextui-org/react": 1.0.0-beta.9-dbg2
-    "@slashnephy/eslint-config": 2.3.127
+    "@slashnephy/eslint-config": 2.3.128
     "@slashnephy/prettier-config": 1.0.73
     "@tabler/icons-react": 2.47.0
     "@tanstack/react-query": 4.36.1
