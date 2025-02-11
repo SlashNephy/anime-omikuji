@@ -3708,7 +3708,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/core@npm:^1.7.26":
+"@swc/core@npm:^1.10.15":
   version: 1.10.15
   resolution: "@swc/core@npm:1.10.15"
   dependencies:
@@ -4298,14 +4298,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitejs/plugin-react-swc@npm:3.7.2":
-  version: 3.7.2
-  resolution: "@vitejs/plugin-react-swc@npm:3.7.2"
+"@vitejs/plugin-react-swc@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@vitejs/plugin-react-swc@npm:3.8.0"
   dependencies:
-    "@swc/core": ^1.7.26
+    "@swc/core": ^1.10.15
   peerDependencies:
     vite: ^4 || ^5 || ^6
-  checksum: 3b7888ba7079b238afbd3a506475208c45df06932a0643f3390c18cde7da52934e4138f492272e7b695fe5a62d84bc3117eb390e467ea6bc1c8ac28200d5329b
+  checksum: cb6effd4e9fa9296ab4c6bc611b4fb510c51a0d273d0dd7724dd35fc22093663c3c5b78ec747673409a10ff023a3404fca0e44803a5247e05bf537772ee21f11
   languageName: node
   linkType: hard
 
@@ -4471,7 +4471,7 @@ __metadata:
     "@tanstack/react-query": 4.36.1
     "@types/react": 18.3.18
     "@types/react-dom": 18.3.5
-    "@vitejs/plugin-react-swc": 3.7.2
+    "@vitejs/plugin-react-swc": 3.8.0
     concurrently: 9.1.2
     country-flag-icons: 1.5.16
     date-fns: 2.30.0
