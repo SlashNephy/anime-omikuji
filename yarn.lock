@@ -1162,30 +1162,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-codegen/client-preset@npm:4.6.1":
-  version: 4.6.1
-  resolution: "@graphql-codegen/client-preset@npm:4.6.1"
-  dependencies:
-    "@babel/helper-plugin-utils": ^7.20.2
-    "@babel/template": ^7.20.7
-    "@graphql-codegen/add": ^5.0.3
-    "@graphql-codegen/gql-tag-operations": 4.0.14
-    "@graphql-codegen/plugin-helpers": ^5.1.0
-    "@graphql-codegen/typed-document-node": ^5.0.13
-    "@graphql-codegen/typescript": ^4.1.3
-    "@graphql-codegen/typescript-operations": ^4.4.1
-    "@graphql-codegen/visitor-plugin-common": ^5.6.1
-    "@graphql-tools/documents": ^1.0.0
-    "@graphql-tools/utils": ^10.0.0
-    "@graphql-typed-document-node/core": 3.2.0
-    tslib: ~2.6.0
-  peerDependencies:
-    graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
-  checksum: 1e707fbb225bdfe07169298e4621f0e9df6fdd113d949225a7fe654233698be8a77db0964844f02e6d4c26d70c6fa7dc70fbcc2526cc345d225fb9954be344c8
-  languageName: node
-  linkType: hard
-
-"@graphql-codegen/client-preset@npm:^4.6.0":
+"@graphql-codegen/client-preset@npm:4.6.2, @graphql-codegen/client-preset@npm:^4.6.0":
   version: 4.6.2
   resolution: "@graphql-codegen/client-preset@npm:4.6.2"
   dependencies:
@@ -4484,7 +4461,7 @@ __metadata:
   dependencies:
     "@emotion/react": 11.14.0
     "@graphql-codegen/cli": 5.0.4
-    "@graphql-codegen/client-preset": 4.6.1
+    "@graphql-codegen/client-preset": 4.6.2
     "@mantine/core": 6.0.22
     "@mantine/hooks": 6.0.22
     "@nextui-org/react": 1.0.0-beta.9-dbg2
