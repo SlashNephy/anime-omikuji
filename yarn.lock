@@ -3509,18 +3509,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/query-core@npm:4.36.1":
-  version: 4.36.1
-  resolution: "@tanstack/query-core@npm:4.36.1"
-  checksum: 47672094da20d89402d9fe03bb7b0462be73a76ff9ca715169738bc600a719d064d106d083a8eedae22a2c22de22f87d5eb5d31ef447aba771d9190f2117ed10
+"@tanstack/query-core@npm:4.39.1":
+  version: 4.39.1
+  resolution: "@tanstack/query-core@npm:4.39.1"
+  checksum: b828cbca8d59dab59ca168c491e15eaf5d6fc94bed8226d7c7e0e96e0b59907771777ed22bafa52945fccf655358dbba38800b68798166caaf2807af9caeb774
   languageName: node
   linkType: hard
 
-"@tanstack/react-query@npm:4.36.1":
-  version: 4.36.1
-  resolution: "@tanstack/react-query@npm:4.36.1"
+"@tanstack/react-query@npm:4.39.1":
+  version: 4.39.1
+  resolution: "@tanstack/react-query@npm:4.39.1"
   dependencies:
-    "@tanstack/query-core": 4.36.1
+    "@tanstack/query-core": 4.39.1
     use-sync-external-store: ^1.2.0
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -3531,7 +3531,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: 1aff0a476859386f8d32253fa0d0bde7b81769a6d4d4d9cbd78778f0f955459a3bdb7ee27a0d2ee7373090f12998b45df80db0b5b313bd0a7a39d36c6e8e51c5
+  checksum: ad0e2107b9773b25c21ee7f75769e825acd54d9fa02f3fc0d382da9b6f129b00ceaa75823164ce1b6182a2eda51086f78d1ce4fd4ef688024460a9ec2b418f5e
   languageName: node
   linkType: hard
 
@@ -4443,7 +4443,7 @@ __metadata:
     "@slashnephy/eslint-config": 2.3.204
     "@slashnephy/prettier-config": 1.0.73
     "@tabler/icons-react": 2.47.0
-    "@tanstack/react-query": 4.36.1
+    "@tanstack/react-query": 4.39.1
     "@types/react": 18.3.23
     "@types/react-dom": 18.3.7
     "@vitejs/plugin-react-swc": 3.10.0
