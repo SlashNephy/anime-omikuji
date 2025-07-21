@@ -3083,10 +3083,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rolldown/pluginutils@npm:1.0.0-beta.11":
-  version: 1.0.0-beta.11
-  resolution: "@rolldown/pluginutils@npm:1.0.0-beta.11"
-  checksum: bcb963b0b4c51e02089be46a6bb77e79b38f4383e3a754853a44c4c6ea72a51c000a89b0e5d8e0529c7b0bb4aca48ebdca01eb0ddad61376c33fa7bd868c26f2
+"@rolldown/pluginutils@npm:1.0.0-beta.27":
+  version: 1.0.0-beta.27
+  resolution: "@rolldown/pluginutils@npm:1.0.0-beta.27"
+  checksum: b57d8de44534bdbb92e9dda70a29c5b3cb7a13cc3a2efaaf9d27923ca23e2526e9470939fe1d7c6a96623da20aaf96a1517502e1d9a6d4f98fbb544cf502600a
   languageName: node
   linkType: hard
 
@@ -3434,7 +3434,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/core@npm:^1.11.31":
+"@swc/core@npm:^1.12.11":
   version: 1.13.1
   resolution: "@swc/core@npm:1.13.1"
   dependencies:
@@ -4307,15 +4307,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitejs/plugin-react-swc@npm:3.10.2":
-  version: 3.10.2
-  resolution: "@vitejs/plugin-react-swc@npm:3.10.2"
+"@vitejs/plugin-react-swc@npm:3.11.0":
+  version: 3.11.0
+  resolution: "@vitejs/plugin-react-swc@npm:3.11.0"
   dependencies:
-    "@rolldown/pluginutils": 1.0.0-beta.11
-    "@swc/core": ^1.11.31
+    "@rolldown/pluginutils": 1.0.0-beta.27
+    "@swc/core": ^1.12.11
   peerDependencies:
-    vite: ^4 || ^5 || ^6 || ^7.0.0-beta.0
-  checksum: aa4fde1893e675f6bcb1198c69ecfd22b6ba0f88ceb74180a128758cb023cef7403a02865545ffb9a6137c732dfd8e6ccaf01930962aa964f96d0e0f6658a823
+    vite: ^4 || ^5 || ^6 || ^7
+  checksum: 03f52655f4eb3c7c6325b11b863f7d3f11b9c0a367fe2ee39cafd690b7622bbec7b21b5bad5c3216c9e82390ef28a915119112c348659637ec454f09596656db
   languageName: node
   linkType: hard
 
@@ -4492,7 +4492,7 @@ __metadata:
     "@tanstack/react-query": 4.40.1
     "@types/react": 18.3.23
     "@types/react-dom": 18.3.7
-    "@vitejs/plugin-react-swc": 3.10.2
+    "@vitejs/plugin-react-swc": 3.11.0
     concurrently: 9.2.0
     country-flag-icons: 1.5.19
     date-fns: 2.30.0
