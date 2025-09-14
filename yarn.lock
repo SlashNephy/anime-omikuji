@@ -4708,7 +4708,7 @@ __metadata:
     "@types/react-dom": 18.3.7
     "@vitejs/plugin-react-swc": 4.0.1
     concurrently: 9.2.1
-    country-flag-icons: 1.5.19
+    country-flag-icons: 1.5.20
     date-fns: 2.30.0
     eslint: 8.57.1
     font-color-contrast: 11.1.0
@@ -5442,10 +5442,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"country-flag-icons@npm:1.5.19":
-  version: 1.5.19
-  resolution: "country-flag-icons@npm:1.5.19"
-  checksum: bb9666fb0ddbedd76fcede911f969bfb1c5b14454049a08db22aded1f48b6201f3dfb9832fa904581b9fd788ee02feb946ae4c5fb322f7a866d328a0357630f9
+"country-flag-icons@npm:1.5.20":
+  version: 1.5.20
+  resolution: "country-flag-icons@npm:1.5.20"
+  checksum: 984ba5fd8f08df4e46eab6f2bd1a58115751e0526b4ec18bf92f0afc3b258b9c8402fc112144e0f055037f473f8add0c8c72c314749e94fcd48876a864231ce4
   languageName: node
   linkType: hard
 
