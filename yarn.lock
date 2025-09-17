@@ -4731,7 +4731,7 @@ __metadata:
     ts-array-length: 0.1.3
     typescript: 4.9.5
     vite: 7.1.5
-    zod: 3.25.76
+    zod: 4.1.9
   languageName: unknown
   linkType: soft
 
@@ -11286,9 +11286,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:3.25.76":
-  version: 3.25.76
-  resolution: "zod@npm:3.25.76"
-  checksum: c9a403a62b329188a5f6bd24d5d935d2bba345f7ab8151d1baa1505b5da9f227fb139354b043711490c798e91f3df75991395e40142e6510a4b16409f302b849
+"zod@npm:4.1.9":
+  version: 4.1.9
+  resolution: "zod@npm:4.1.9"
+  checksum: e8890d0255dc4744b2af8995d487943c3d51ab36fc1631fe4ea0d1e51445cb1d1e459146a2eb2c95bbf4bb05f88a03add8aac9758b96b932a6d2f79c99332fba
   languageName: node
   linkType: hard
