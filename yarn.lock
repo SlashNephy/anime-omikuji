@@ -779,9 +779,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-codegen/cli@npm:6.0.0":
-  version: 6.0.0
-  resolution: "@graphql-codegen/cli@npm:6.0.0"
+"@graphql-codegen/cli@npm:6.0.1":
+  version: 6.0.1
+  resolution: "@graphql-codegen/cli@npm:6.0.1"
   dependencies:
     "@babel/generator": ^7.18.13
     "@babel/template": ^7.18.10
@@ -828,7 +828,7 @@ __metadata:
     graphql-code-generator: cjs/bin.js
     graphql-codegen: cjs/bin.js
     graphql-codegen-esm: esm/bin.js
-  checksum: 28e98a2bf7bfe2381c15afee1001768e0ae6ca4f622ec13ddf3ba8a06347df1c404619a84cfbec8161a4f3739f6a55cb8208ec6ab4665128a7542cfe119195d6
+  checksum: d0983dc9a26e3ede4e6f174ad90bd942cabb8c795e0ed3dade9cf2a7f65f2dd65b8a8da6dc24f2cf086d9aaa0d998cc530f6bc9c2badd0adaf9a6745cdd90674
   languageName: node
   linkType: hard
 
@@ -4709,7 +4709,7 @@ __metadata:
   resolution: "anime-omikuji@workspace:."
   dependencies:
     "@emotion/react": 11.14.0
-    "@graphql-codegen/cli": 6.0.0
+    "@graphql-codegen/cli": 6.0.1
     "@graphql-codegen/client-preset": 5.1.0
     "@mantine/core": 6.0.22
     "@mantine/hooks": 6.0.22
