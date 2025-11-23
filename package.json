@@ -54,7 +54,7 @@
     "typescript": "4.9.5",
     "vite": "7.2.4"
   },
-  "packageManager": "yarn@3.8.7",
+  "packageManager": "yarn@4.11.0",
   "engines": {
     "node": ">= 18"
   },
