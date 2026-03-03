@@ -4019,19 +4019,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/query-core@npm:4.41.0":
-  version: 4.41.0
-  resolution: "@tanstack/query-core@npm:4.41.0"
-  checksum: 285d1d138ee752139a37871c05d56f75ac2a5583b9eb91de5656a0e0568cbc8066ac512a2744b3be592fa2b5ce362bcf1a3060968299c59e4d2ec8f6d34e2c3c
+"@tanstack/query-core@npm:4.43.0":
+  version: 4.43.0
+  resolution: "@tanstack/query-core@npm:4.43.0"
+  checksum: 3e37f8cedd533aaacaaa40bb940b45c4c428e48f11db15665932c71d15d200c0f69ae3ca2bb3233078f1620f521712a4294610b5b87ffe51cd07acffacaef17d
   languageName: node
   linkType: hard
 
-"@tanstack/react-query@npm:4.42.0":
-  version: 4.42.0
-  resolution: "@tanstack/react-query@npm:4.42.0"
+"@tanstack/react-query@npm:4.43.0":
+  version: 4.43.0
+  resolution: "@tanstack/react-query@npm:4.43.0"
   dependencies:
-    "@tanstack/query-core": 4.41.0
-    use-sync-external-store: ^1.2.0
+    "@tanstack/query-core": 4.43.0
+    use-sync-external-store: ^1.6.0
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -4041,7 +4041,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: d5492a1b8681c1270244d75ec613becbec47612b28308e678d339d1a3858f4c10d23a4761bf7dae476792daf8dc4fd50e27ea705c76998fda71b5acb5045d059
+  checksum: 059d4c0663b8f9b8ce592f22bf7de7121da4861bff5d5c9cfc9f527251243cd983d8377dcb7267d080282e5b0ff950790d1cca83c5ce4406be4bb9371b4263ec
   languageName: node
   linkType: hard
 
@@ -4965,7 +4965,7 @@ __metadata:
     "@slashnephy/eslint-config": 2.3.204
     "@slashnephy/prettier-config": 1.0.73
     "@tabler/icons-react": 2.47.0
-    "@tanstack/react-query": 4.42.0
+    "@tanstack/react-query": 4.43.0
     "@types/react": 18.3.28
     "@types/react-dom": 18.3.7
     "@vitejs/plugin-react-swc": 4.2.3
@@ -11159,7 +11159,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"use-sync-external-store@npm:^1.2.0":
+"use-sync-external-store@npm:^1.6.0":
   version: 1.6.0
   resolution: "use-sync-external-store@npm:1.6.0"
   peerDependencies:
