@@ -13,20 +13,20 @@ on:
 jobs:
   build:
     if: github.event_name != 'push'
-    uses: SlashNephy/.github/.github/workflows/yarn-run.yml@master
+    uses: SlashNephy/.github/.github/workflows/yarn-run.yml@2b64691f87d64d627f89946fb6f21169ddffc8b0 # master
     permissions:
       contents: 'read'
     with:
       script: 'build'
 
   lint:
-    uses: SlashNephy/.github/.github/workflows/yarn-lint.yml@master
+    uses: SlashNephy/.github/.github/workflows/yarn-lint.yml@2b64691f87d64d627f89946fb6f21169ddffc8b0 # master
     permissions:
       contents: 'read'
       pull-requests: 'write'
 
   format:
     if: github.event_name == 'push'
-    uses: SlashNephy/.github/.github/workflows/yarn-format.yml@master
+    uses: SlashNephy/.github/.github/workflows/yarn-format.yml@2b64691f87d64d627f89946fb6f21169ddffc8b0 # master
     permissions:
       contents: 'write'
