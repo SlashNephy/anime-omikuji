@@ -4967,7 +4967,7 @@ __metadata:
     "@types/react": 18.3.28
     "@types/react-dom": 18.3.7
     "@vitejs/plugin-react-swc": 4.3.1
-    concurrently: 9.2.1
+    concurrently: 9.2.4
     country-flag-icons: 1.6.20
     date-fns: 2.30.0
     eslint: 8.57.1
@@ -5582,20 +5582,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"concurrently@npm:9.2.1":
-  version: 9.2.1
-  resolution: "concurrently@npm:9.2.1"
+"concurrently@npm:9.2.4":
+  version: 9.2.4
+  resolution: "concurrently@npm:9.2.4"
   dependencies:
     chalk: 4.1.2
     rxjs: 7.8.2
-    shell-quote: 1.8.3
+    shell-quote: 1.9.0
     supports-color: 8.1.1
     tree-kill: 1.2.2
     yargs: 17.7.2
   bin:
     conc: dist/bin/concurrently.js
     concurrently: dist/bin/concurrently.js
-  checksum: 95c6cdde21b6304d53005d872318805f69e153d4cedfd4d720cc5776f56fbd073b38297cfe56bacfc8fbdba9b6c38ac1233739abd25b023761fd03b896a4cea5
+  checksum: 3cfb0081071d3fc065bf4349098a2b6e764dfbef8d59de21b0e81aff96f23e10126ec5e9db8a033a8a0674ac9629a85f27cd24e6d4a94f2f779108a63d17cd68
   languageName: node
   linkType: hard
 
@@ -10014,10 +10014,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"shell-quote@npm:1.8.3":
-  version: 1.8.3
-  resolution: "shell-quote@npm:1.8.3"
-  checksum: 550dd84e677f8915eb013d43689c80bb114860649ec5298eb978f40b8f3d4bc4ccb072b82c094eb3548dc587144bb3965a8676f0d685c1cf4c40b5dc27166242
+"shell-quote@npm:1.9.0":
+  version: 1.9.0
+  resolution: "shell-quote@npm:1.9.0"
+  checksum: 2ec85fb903121c684c3536d051e377e98746cf88525e08c298baaa7b42c168de75c3201cef00db66556e89e340a8cf26bd4c18e7a3fd78799449a21cac43da2e
   languageName: node
   linkType: hard
 
