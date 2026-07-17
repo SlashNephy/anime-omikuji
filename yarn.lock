@@ -4972,7 +4972,7 @@ __metadata:
     date-fns: 2.30.0
     eslint: 8.57.1
     font-color-contrast: 11.1.0
-    graphql: 16.14.2
+    graphql: 17.0.2
     graphql-request: 5.2.0
     lz-string: 1.5.0
     next-themes: 0.4.6
@@ -7724,10 +7724,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql@npm:16.14.2":
-  version: 16.14.2
-  resolution: "graphql@npm:16.14.2"
-  checksum: 8d44ddb96e32dfd5e076d454c9e06872242302ff5da7c8b57c2af5449a1f929a6dcd919b25f6735d6d4be72f05988f0f748bd566a4444c206665209f94270794
+"graphql@npm:17.0.2":
+  version: 17.0.2
+  resolution: "graphql@npm:17.0.2"
+  checksum: 4520cdb805a7c0211a45cbed28c0f10bbbd412ed97011a00808872a1abb7167b09d400f065a261b9c85c03ec131ba856910d918de844bb48299dc8b1f08b7805
   languageName: node
   linkType: hard
 
